@@ -112,6 +112,7 @@ export default function Leaderboard() {
             <div className="col-span-6 md:col-span-5 font-bold text-base md:text-lg truncate">
               {player.name}
               {index === 0 && <span className="ml-2 text-base">👑</span>}
+              {index === players.length - 1 && <span className="ml-2 text-base">🍆</span>}
             </div>
             <div className="col-span-4 md:col-span-3 text-right font-mono text-lg md:text-xl font-bold tabular-nums">
               {player.initial_elo}
