@@ -38,7 +38,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 const gamesData = [
   {
-    date: '2025-01-07T12:00:00Z', // Jan 7, 2025
+    date: '2026-01-07T12:00:00Z', // Jan 7, 2026 (Corrected from 2025 typo)
     raw: ['Chetan', 'Rishi', 'Rohit', 'Saurav', 'Kabeer', 'Amay', 'Akshay']
   },
   {
@@ -50,11 +50,11 @@ const gamesData = [
     raw: ['Rishi', 'Akshay', 'Chetan', 'Saurav', 'Amay', 'Kabeer', 'Rohit', 'Kabeer', 'Amay', 'Kabeer', 'Kabeer']
   },
   {
-    date: '2026-02-06T22:46:00Z', // 10:46 PM
+    date: '2026-02-05T22:46:00Z', // 10:46 PM
     raw: ['Shashank', 'Amay', 'Kabeer', 'Rohit', 'Rishi', 'Chetan', 'Rohit', 'Kabeer', 'Rohit']
   },
   {
-    date: '2026-02-06T23:30:00Z', // 11:30 PM
+    date: '2026-02-05T23:30:00Z', // 11:30 PM
     raw: ['Rohit', 'Akshay', 'Saurav', 'Amay', 'Farhan', 'Rishi']
   }
 ]
