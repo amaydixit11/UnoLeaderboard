@@ -85,40 +85,40 @@ export default function AddGame() {
         <h1 className="text-2xl font-bold font-mono uppercase">Log Game Result</h1>
       </header>
 
-      <div className="border border-foreground/20 p-6 bg-white/5 space-y-6">
+      <div className="border border-foreground/20 p-6 bg-white/5 space-y-6 shadow-[8px_8px_0px_0px_var(--uno-yellow)]">
         <div className="flex justify-between items-center">
-          <h2 className="font-mono text-accent uppercase text-sm tracking-widest">Rankings</h2>
+          <h2 className="font-mono text-uno-yellow uppercase text-sm tracking-widest font-bold">Rankings</h2>
           <button 
             onClick={() => setShowNewPlayerInput(!showNewPlayerInput)}
-            className="text-xs uppercase font-bold flex items-center gap-1 hover:text-accent"
+            className="text-xs uppercase font-bold flex items-center gap-1 text-foreground hover:text-uno-green transition-colors"
           >
             <UserPlus size={14} /> New Player
           </button>
         </div>
 
         {showNewPlayerInput && (
-          <div className="flex gap-2 p-2 bg-accent/10 border border-accent/20">
+          <div className="flex gap-2 p-2 bg-uno-green/10 border border-uno-green/50">
             <input 
-              className="bg-transparent border-b border-accent px-2 py-1 outline-none text-sm flex-1"
+              className="bg-transparent border-b border-uno-green px-2 py-1 outline-none text-base flex-1 placeholder:text-foreground/30"
               placeholder="Player Name"
               value={newPlayerName}
               onChange={(e) => setNewPlayerName(e.target.value)}
             />
-            <button onClick={handleCreatePlayer} className="text-accent font-bold text-xs uppercase px-2">
+            <button onClick={handleCreatePlayer} className="text-uno-green font-bold text-xs uppercase px-2">
               Add
             </button>
           </div>
         )}
 
-        <div className="space-y-2">
+        <div className="space-y-3">
           {positions.map((pos, index) => (
             <div key={index} className="flex items-center gap-4 animate-in slide-in-from-left-2 fade-in duration-300" style={{ animationDelay: `${index * 50}ms` }}>
-              <div className="font-mono font-bold text-lg w-8 text-right opacity-50">
+              <div className="font-mono font-bold text-xl w-8 text-right opacity-50">
                 #{pos.position}
               </div>
               <div className="flex-1">
                 <select 
-                  className="w-full bg-background border border-foreground/20 p-3 font-mono text-sm focus:border-accent outline-none appearance-none"
+                  className="w-full bg-background border border-foreground/20 p-3 font-mono text-base focus:border-uno-blue outline-none appearance-none cursor-pointer rounded-none"
                   value={pos.playerId}
                   onChange={(e) => handleChangePlayer(index, e.target.value)}
                 >
@@ -131,9 +131,9 @@ export default function AddGame() {
               <button 
                 onClick={() => handleRemovePosition(index)}
                 disabled={positions.length <= 4}
-                className="opacity-50 hover:opacity-100 disabled:opacity-10 hover:text-danger transition-colors p-2"
+                className="opacity-50 hover:opacity-100 disabled:opacity-10 hover:text-uno-red transition-colors p-2"
               >
-                <Trash2 size={16} />
+                <Trash2 size={20} />
               </button>
             </div>
           ))}
@@ -141,7 +141,7 @@ export default function AddGame() {
 
         <button 
           onClick={handleAddPosition}
-          className="w-full py-3 border-2 border-dashed border-foreground/20 text-foreground/50 hover:border-accent hover:text-accent transition-colors uppercase font-mono text-sm flex items-center justify-center gap-2"
+          className="w-full py-4 border-2 border-dashed border-foreground/20 text-foreground/50 hover:border-uno-green hover:text-uno-green transition-colors uppercase font-mono text-sm flex items-center justify-center gap-2"
         >
           <Plus size={16} /> Add Position
         </button>
@@ -152,9 +152,9 @@ export default function AddGame() {
         <button 
           onClick={handleSubmit}
           disabled={isSubmitting}
-          className="flex-1 bg-accent text-white font-bold py-4 uppercase font-mono tracking-wider hover:bg-accent/80 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+          className="flex-1 bg-uno-red text-white font-bold py-4 uppercase font-mono tracking-wider hover:bg-uno-red/90 transition-all flex items-center justify-center gap-2 disabled:opacity-50 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] transform active:translate-y-1 active:shadow-none"
         >
-          {isSubmitting ? 'Calculating...' : (
+          {isSubmitting ? 'Playing Wild Card...' : (
             <>
               <Save size={18} /> Confirm & Save
             </>
