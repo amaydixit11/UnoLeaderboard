@@ -42,6 +42,47 @@ export default async function PlayerProfile({ params }: { params: Promise<{ id: 
     whr: r.whr_after ?? null,
   }))
 
+  // Relationships (Nemesis, Easy Target, Closest Rival)
+  const { data: allPlayers } = await supabase.from('players').select('id, name, os_ordinal')
+  const gameIds = results?.map((r: any) => r.game_id) || []
+  const { data: opponentResults } = await supabase
+    .from('game_results')
+    .select('player_id, game_id, normalized_position')
+    .in('game_id', gameIds)
+    .neq('player_id', id)
+
+  const opponentStats: Record<string, { wins: number; losses: number; name: string }> = {}
+  allPlayers?.forEach(p => {
+    if (p.id !== id) opponentStats[p.id] = { wins: 0, losses: 0, name: p.name }
+  })
+
+  if (opponentResults && results) {
+    const myPosMap = new Map(results.map((r: any) => [r.game_id, r.normalized_position]))
+    opponentResults.forEach((or: any) => {
+      const myPos = myPosMap.get(or.game_id)
+      if (myPos !== undefined && opponentStats[or.player_id]) {
+        if (myPos < or.normalized_position) opponentStats[or.player_id].wins += 1
+        else if (myPos > or.normalized_position) opponentStats[or.player_id].losses += 1
+      }
+    })
+  }
+
+  let nemesis = { name: '-', score: 0, id: '' }
+  let easyTarget = { name: '-', score: 0, id: '' }
+  Object.entries(opponentStats).forEach(([oppId, stats]) => {
+    if (stats.losses > nemesis.score) nemesis = { name: stats.name, score: stats.losses, id: oppId }
+    if (stats.wins > easyTarget.score) easyTarget = { name: stats.name, score: stats.wins, id: oppId }
+  })
+
+  let closestRival = { name: '-', diff: Infinity, id: '' }
+  const myRating = player.os_ordinal ?? 0
+  allPlayers?.forEach(p => {
+    if (p.id !== id && p.os_ordinal != null) {
+      const diff = Math.abs(p.os_ordinal - myRating)
+      if (diff < closestRival.diff) closestRival = { name: p.name, diff, id: p.id }
+    }
+  })
+
   return (
     <main className="min-h-screen p-4 md:p-8 max-w-4xl mx-auto space-y-8">
       <header className="flex items-center gap-4">
@@ -108,6 +149,44 @@ export default async function PlayerProfile({ params }: { params: Promise<{ id: 
           <QuadRatingChart data={chartData} />
         </div>
       )}
+      {/* Relationships */}
+      {gamesPlayed > 0 && (
+        <>
+          <h2 className="text-xl font-bold font-mono uppercase mt-8 border-b border-foreground/20 pb-2 text-foreground">Rivals</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {nemesis.id ? (
+              <Link href={`/rivalry?p1=${id}&p2=${nemesis.id}`} className="block border border-foreground/20 p-4 bg-white/5 hover:border-uno-red transition-colors group">
+                <div className="text-xs opacity-50 uppercase font-mono mb-1 text-uno-red">Nemesis</div>
+                <div className="text-2xl font-bold font-mono group-hover:text-uno-red transition-colors">{nemesis.name}</div>
+                <div className="text-xs font-mono opacity-50 mt-1">{nemesis.score} losses against</div>
+              </Link>
+            ) : (
+              <div className="border border-foreground/20 p-4 bg-white/5 opacity-50"><div className="text-xs uppercase font-mono mb-1 text-uno-red">Nemesis</div><div className="text-2xl font-bold font-mono">-</div></div>
+            )}
+            
+            {easyTarget.id ? (
+              <Link href={`/rivalry?p1=${id}&p2=${easyTarget.id}`} className="block border border-foreground/20 p-4 bg-white/5 hover:border-uno-green transition-colors group">
+                <div className="text-xs opacity-50 uppercase font-mono mb-1 text-uno-green">Easy Target</div>
+                <div className="text-2xl font-bold font-mono group-hover:text-uno-green transition-colors">{easyTarget.name}</div>
+                <div className="text-xs font-mono opacity-50 mt-1">{easyTarget.score} wins against</div>
+              </Link>
+            ) : (
+              <div className="border border-foreground/20 p-4 bg-white/5 opacity-50"><div className="text-xs uppercase font-mono mb-1 text-uno-green">Easy Target</div><div className="text-2xl font-bold font-mono">-</div></div>
+            )}
+
+            {closestRival.id ? (
+              <Link href={`/rivalry?p1=${id}&p2=${closestRival.id}`} className="block border border-foreground/20 p-4 bg-white/5 hover:border-uno-blue transition-colors group">
+                <div className="text-xs opacity-50 uppercase font-mono mb-1 text-uno-blue">Closest Rival</div>
+                <div className="text-2xl font-bold font-mono group-hover:text-uno-blue transition-colors">{closestRival.name}</div>
+                <div className="text-xs font-mono opacity-50 mt-1">OS diff: {Math.round(closestRival.diff)}</div>
+              </Link>
+            ) : (
+              <div className="border border-foreground/20 p-4 bg-white/5 opacity-50"><div className="text-xs uppercase font-mono mb-1 text-uno-blue">Closest Rival</div><div className="text-2xl font-bold font-mono">-</div></div>
+            )}
+          </div>
+        </>
+      )}
+
 
       <h2 className="text-xl font-bold font-mono uppercase mt-8 border-b border-foreground/20 pb-2 text-uno-yellow">Recent Performance</h2>
       

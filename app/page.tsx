@@ -15,28 +15,39 @@ export default function Home() {
           </p>
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-          <Link 
-            href="/add-game" 
-            className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-uno-blue text-white font-bold py-3 md:py-4 px-8 hover:bg-uno-blue/80 transition-all transform hover:scale-105 uppercase font-mono shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]"
-          >
-            <Plus size={24} />
-            Log Game
-          </Link>
-          <Link 
-            href="/history" 
-            className="flex-1 md:flex-none flex items-center justify-center gap-2 border-2 border-uno-yellow text-uno-yellow font-bold py-3 md:py-4 px-8 hover:bg-uno-yellow hover:text-black transition-all transform hover:scale-105 uppercase font-mono"
-          >
-            <History size={24} />
-            History
-          </Link>
-          <Link 
-            href="/rivalry" 
-            className="flex-1 md:flex-none flex items-center justify-center gap-2 border-2 border-uno-red text-uno-red font-bold py-3 md:py-4 px-8 hover:bg-uno-red hover:text-white transition-all transform hover:scale-105 uppercase font-mono"
-          >
-            <Swords size={24} />
-            Rivalry
-          </Link>
+        <div className="flex flex-col gap-4 w-full md:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 w-full">
+            <Link 
+              href="/add-game" 
+              className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-uno-blue text-white font-bold py-3 md:py-4 px-8 hover:bg-uno-blue/80 transition-all transform hover:scale-105 uppercase font-mono shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]"
+            >
+              <Plus size={24} />
+              Log Game
+            </Link>
+            <Link 
+              href="/history" 
+              className="flex-1 md:flex-none flex items-center justify-center gap-2 border-2 border-uno-yellow text-uno-yellow font-bold py-3 md:py-4 px-8 hover:bg-uno-yellow hover:text-black transition-all transform hover:scale-105 uppercase font-mono"
+            >
+              <History size={24} />
+              History
+            </Link>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 w-full">
+            <Link 
+              href="/rivalry" 
+              className="flex-1 md:flex-none flex items-center justify-center gap-2 border-2 border-uno-red text-uno-red font-bold py-3 md:py-4 px-8 hover:bg-uno-red hover:text-white transition-all transform hover:scale-105 uppercase font-mono"
+            >
+              <Swords size={24} />
+              Head to Head
+            </Link>
+            <Link 
+              href="/global-rivalry" 
+              className="flex-1 md:flex-none flex items-center justify-center gap-2 border-2 border-uno-green text-uno-green font-bold py-3 md:py-4 px-8 hover:bg-uno-green hover:text-black transition-all transform hover:scale-105 uppercase font-mono"
+            >
+              <Swords size={24} />
+              Global Matrix
+            </Link>
+          </div>
         </div>
       </header>
 
