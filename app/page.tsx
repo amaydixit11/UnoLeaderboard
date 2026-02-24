@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Leaderboard from '@/components/Leaderboard'
-import { Plus, History } from 'lucide-react'
+import { Plus, History, Swords } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -29,6 +29,13 @@ export default function Home() {
           >
             <History size={24} />
             History
+          </Link>
+          <Link 
+            href="/rivalry" 
+            className="flex-1 md:flex-none flex items-center justify-center gap-2 border-2 border-uno-red text-uno-red font-bold py-3 md:py-4 px-8 hover:bg-uno-red hover:text-white transition-all transform hover:scale-105 uppercase font-mono"
+          >
+            <Swords size={24} />
+            Rivalry
           </Link>
         </div>
       </header>

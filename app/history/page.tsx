@@ -14,6 +14,9 @@ export default async function HistoryPage() {
       game_results (
         player_id,
         elo_change,
+        cf_change,
+        os_change,
+        whr_change,
         normalized_position,
         players (name)
       )
@@ -31,7 +34,7 @@ export default async function HistoryPage() {
 
       <div className="space-y-6">
         {games?.map((game: any) => (
-          <div key={game.id} className="border border-foreground/20 p-6 hover:bg-white/5 transition-colors shadow-[4px_4px_0px_0px_var(--uno-blue)]">
+          <Link key={game.id} href={`/game/${game.id}`} className="block border border-foreground/20 p-6 hover:bg-white/5 transition-colors shadow-[4px_4px_0px_0px_var(--uno-blue)] hover:shadow-[6px_6px_0px_0px_var(--uno-blue)] hover:translate-x-[-1px] hover:translate-y-[-1px]">
             <div className="flex justify-between items-start mb-6 border-b border-foreground/10 pb-4">
               <div className="flex items-center gap-2 opacity-50 font-mono text-sm">
                 <Calendar size={14} />
@@ -58,13 +61,38 @@ export default async function HistoryPage() {
                     </span>
                     <span className="font-bold">{result.players?.name}</span>
                   </div>
-                  <span className={`font-mono font-bold ${result.elo_change >= 0 ? 'text-uno-green' : 'text-uno-red'}`}>
-                    {result.elo_change > 0 ? '+' : ''}{result.elo_change}
-                  </span>
+                  <div className="flex gap-3 font-mono text-xs font-bold">
+                    <span className={result.elo_change >= 0 ? 'text-uno-green' : 'text-uno-red'} title="Elo">
+                      {result.elo_change > 0 ? '+' : ''}{result.elo_change}
+                    </span>
+                    {result.cf_change != null && (
+                      <span className={result.cf_change >= 0 ? 'text-uno-green' : 'text-uno-red'} title="CF">
+                        {result.cf_change > 0 ? '+' : ''}{result.cf_change}
+                      </span>
+                    )}
+                    {result.os_change != null && (
+                      <span className={result.os_change >= 0 ? 'text-uno-green' : 'text-uno-red'} title="OS">
+                        {result.os_change > 0 ? '+' : ''}{result.os_change}
+                      </span>
+                    )}
+                    {result.whr_change != null && (
+                      <span className={result.whr_change >= 0 ? 'text-uno-green' : 'text-uno-red'} title="WHR">
+                        {result.whr_change > 0 ? '+' : ''}{result.whr_change}
+                      </span>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
+
+            {/* Legend row */}
+            <div className="flex justify-end gap-4 mt-3 font-mono text-[10px] opacity-30 uppercase">
+              <span>Elo</span>
+              <span>CF</span>
+              <span>OS</span>
+              <span>WHR</span>
+            </div>
+          </Link>
         ))}
 
         {(!games || games.length === 0) && (

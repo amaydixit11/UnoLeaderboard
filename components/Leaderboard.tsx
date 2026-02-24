@@ -7,17 +7,32 @@ import { ArrowUp, ArrowDown, Minus, Hash } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
+type RatingMode = 'elo' | 'cf' | 'os' | 'whr'
+
+const MODES: { key: RatingMode; label: string }[] = [
+  { key: 'elo', label: 'Pairwise' },
+  { key: 'cf', label: 'CF' },
+  { key: 'os', label: 'OpenSkill' },
+  { key: 'whr', label: 'WHR' },
+]
+
 type PlayerStats = Player & {
   gamesPlayed: number
-  recentChange: number
+  recentEloChange: number
+  recentCfChange: number
+  recentOsChange: number
+  recentWhrChange: number
+  cf_rating: number
+  os_ordinal: number
+  whr_rating: number
 }
 
 export default function Leaderboard() {
   const [players, setPlayers] = useState<PlayerStats[]>([])
   const [loading, setLoading] = useState(true)
+  const [mode, setMode] = useState<RatingMode>('os')
 
   const fetchLeaderboard = async () => {
-    // 1. Fetch players
     const { data: playersData, error: playersError } = await supabase
       .from('players')
       .select('*')
@@ -28,18 +43,22 @@ export default function Leaderboard() {
       return
     }
 
-    // 2. Fetch game stats: count + most recent elo_change per player
     const { data: allResults } = await supabase
       .from('game_results')
-      .select('player_id, elo_change, game_id, games(played_at)')
+      .select('player_id, elo_change, cf_change, os_change, whr_change, game_id, games(played_at)')
       .order('created_at', { ascending: false })
 
-    // Build stats map
-    const statsMap: Record<string, { gamesPlayed: number; recentChange: number }> = {}
+    const statsMap: Record<string, { gamesPlayed: number; recentEloChange: number; recentCfChange: number; recentOsChange: number; recentWhrChange: number }> = {}
     if (allResults) {
       for (const r of allResults) {
         if (!statsMap[r.player_id]) {
-          statsMap[r.player_id] = { gamesPlayed: 0, recentChange: r.elo_change }
+          statsMap[r.player_id] = {
+            gamesPlayed: 0,
+            recentEloChange: r.elo_change,
+            recentCfChange: r.cf_change ?? 0,
+            recentOsChange: r.os_change ?? 0,
+            recentWhrChange: r.whr_change ?? 0,
+          }
         }
         statsMap[r.player_id].gamesPlayed++
       }
@@ -48,11 +67,15 @@ export default function Leaderboard() {
     const mappedPlayers = playersData.map((p) => ({
       ...p,
       elo: p.initial_elo,
+      cf_rating: p.cf_rating ?? 1000,
+      os_ordinal: p.os_ordinal ?? 0,
+      whr_rating: p.whr_rating ?? 1000,
       gamesPlayed: statsMap[p.id]?.gamesPlayed ?? 0,
-      recentChange: statsMap[p.id]?.recentChange ?? 0,
+      recentEloChange: statsMap[p.id]?.recentEloChange ?? 0,
+      recentCfChange: statsMap[p.id]?.recentCfChange ?? 0,
+      recentOsChange: statsMap[p.id]?.recentOsChange ?? 0,
+      recentWhrChange: statsMap[p.id]?.recentWhrChange ?? 0,
     }))
-
-    mappedPlayers.sort((a, b) => b.elo - a.elo)
 
     setPlayers(mappedPlayers)
     setLoading(false)
@@ -60,39 +83,67 @@ export default function Leaderboard() {
 
   useEffect(() => {
     fetchLeaderboard()
-
-    // Real-time subscription
     const channel = supabase
       .channel('leaderboard_changes')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'game_results' }, () => {
-        fetchLeaderboard()
-      })
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'players' }, () => {
-        fetchLeaderboard()
-      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'game_results' }, () => fetchLeaderboard())
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'players' }, () => fetchLeaderboard())
       .subscribe()
-
-    return () => {
-      supabase.removeChannel(channel)
-    }
+    return () => { supabase.removeChannel(channel) }
   }, [])
 
   const getRankColor = (index: number) => {
     switch (index) {
-      case 0: return 'text-uno-yellow drop-shadow-[0_0_8px_rgba(254,202,0,0.5)]' // 1st
-      case 1: return 'text-uno-green'  // 2nd
-      case 2: return 'text-uno-blue'   // 3rd
+      case 0: return 'text-uno-yellow drop-shadow-[0_0_8px_rgba(254,202,0,0.5)]'
+      case 1: return 'text-uno-green'
+      case 2: return 'text-uno-blue'
       default: return 'text-foreground'
     }
   }
+
+  const getRating = (p: PlayerStats) => {
+    switch (mode) {
+      case 'cf': return p.cf_rating
+      case 'os': return p.os_ordinal
+      case 'whr': return p.whr_rating
+      default: return p.initial_elo
+    }
+  }
+
+  const getChange = (p: PlayerStats) => {
+    switch (mode) {
+      case 'cf': return p.recentCfChange
+      case 'os': return p.recentOsChange
+      case 'whr': return p.recentWhrChange
+      default: return p.recentEloChange
+    }
+  }
+
+  const sorted = [...players].sort((a, b) => getRating(b) - getRating(a))
 
   if (loading) return <div className="p-8 text-center animate-pulse font-mono text-accent">SHUFFLING DECK...</div>
 
   return (
     <div className="w-full max-w-4xl mx-auto border-4 border-foreground p-1 shadow-[8px_8px_0px_0px_var(--uno-red)] bg-background">
-      <div className="bg-uno-red text-white p-4 font-mono font-bold text-xl uppercase tracking-tighter flex justify-between items-center shadow-sm">
+      <div className="bg-uno-red text-white p-4 font-mono font-bold text-xl uppercase tracking-tighter flex justify-between items-center shadow-sm flex-wrap gap-2">
         <span>Leaderboard</span>
-        <span className="text-sm bg-black/20 px-2 py-1 rounded">Season 1</span>
+        <div className="flex items-center gap-2">
+          {/* 4-way Rating Mode Toggle */}
+          <div className="flex bg-black/30 text-xs rounded-none overflow-hidden">
+            {MODES.map(m => (
+              <button
+                key={m.key}
+                onClick={() => setMode(m.key)}
+                className={cn(
+                  "px-2 md:px-3 py-1.5 transition-colors font-bold uppercase tracking-wider",
+                  mode === m.key ? "bg-white text-uno-red" : "hover:bg-white/10"
+                )}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
+          <span className="text-sm bg-black/20 px-2 py-1 rounded hidden md:inline">Season 1</span>
+        </div>
       </div>
       
       <div className="divide-y-2 divide-foreground/10">
@@ -104,53 +155,57 @@ export default function Leaderboard() {
           <div className="col-span-3 md:col-span-2 text-right">Trend</div>
         </div>
 
-        {players.map((player, index) => (
-          <div 
-            key={player.id} 
-            className="grid grid-cols-12 gap-2 md:gap-4 p-4 items-center hover:bg-white/5 transition-colors group relative overflow-hidden"
-          >
-            {/* Color accent bar on left */}
-            <div className={cn(
-               "absolute left-0 top-0 bottom-0 w-1",
-               index === 0 ? "bg-uno-yellow" : index === 1 ? "bg-uno-green" : index === 2 ? "bg-uno-blue" : "bg-transparent"
-            )} />
+        {sorted.map((player, index) => {
+          const rating = getRating(player)
+          const recentChange = getChange(player)
 
-            <div className={cn("col-span-2 md:col-span-1 font-mono text-xl md:text-2xl font-black", getRankColor(index))}>
-              #{index + 1}
+          return (
+            <div 
+              key={player.id} 
+              className="grid grid-cols-12 gap-2 md:gap-4 p-4 items-center hover:bg-white/5 transition-colors group relative overflow-hidden"
+            >
+              <div className={cn(
+                 "absolute left-0 top-0 bottom-0 w-1",
+                 index === 0 ? "bg-uno-yellow" : index === 1 ? "bg-uno-green" : index === 2 ? "bg-uno-blue" : "bg-transparent"
+              )} />
+
+              <div className={cn("col-span-2 md:col-span-1 font-mono text-xl md:text-2xl font-black", getRankColor(index))}>
+                #{index + 1}
+              </div>
+              <div className="col-span-4 md:col-span-4 font-bold text-base md:text-lg truncate">
+                <Link href={`/player/${player.id}`} className="hover:text-uno-blue transition-colors hover:underline underline-offset-4">
+                  {player.name}
+                </Link>
+                {index === 0 && <span className="ml-2 text-base">👑</span>}
+                {index === sorted.length - 1 && <span className="ml-2 text-base">🍆</span>}
+              </div>
+              <div className="col-span-3 md:col-span-3 text-right font-mono text-lg md:text-xl font-bold tabular-nums">
+                {rating}
+              </div>
+              <div className="hidden md:flex md:col-span-2 justify-center items-center gap-1 font-mono text-sm opacity-40">
+                <Hash size={12} />
+                {player.gamesPlayed}
+              </div>
+              <div className="col-span-3 md:col-span-2 flex justify-end items-center gap-1 font-mono text-sm font-bold">
+                {recentChange > 0 ? (
+                  <span className="flex items-center gap-1 text-uno-green">
+                    <ArrowUp size={14} />
+                    +{recentChange}
+                  </span>
+                ) : recentChange < 0 ? (
+                  <span className="flex items-center gap-1 text-uno-red">
+                    <ArrowDown size={14} />
+                    {recentChange}
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1 opacity-20">
+                    <Minus size={14} />
+                  </span>
+                )}
+              </div>
             </div>
-            <div className="col-span-4 md:col-span-4 font-bold text-base md:text-lg truncate">
-              <Link href={`/player/${player.id}`} className="hover:text-uno-blue transition-colors hover:underline underline-offset-4">
-                {player.name}
-              </Link>
-              {index === 0 && <span className="ml-2 text-base">👑</span>}
-              {index === players.length - 1 && <span className="ml-2 text-base">🍆</span>}
-            </div>
-            <div className="col-span-3 md:col-span-3 text-right font-mono text-lg md:text-xl font-bold tabular-nums">
-              {player.initial_elo}
-            </div>
-            <div className="hidden md:flex md:col-span-2 justify-center items-center gap-1 font-mono text-sm opacity-40">
-              <Hash size={12} />
-              {player.gamesPlayed}
-            </div>
-            <div className="col-span-3 md:col-span-2 flex justify-end items-center gap-1 font-mono text-sm font-bold">
-              {player.recentChange > 0 ? (
-                <span className="flex items-center gap-1 text-uno-green">
-                  <ArrowUp size={14} />
-                  +{player.recentChange}
-                </span>
-              ) : player.recentChange < 0 ? (
-                <span className="flex items-center gap-1 text-uno-red">
-                  <ArrowDown size={14} />
-                  {player.recentChange}
-                </span>
-              ) : (
-                <span className="flex items-center gap-1 opacity-20">
-                  <Minus size={14} />
-                </span>
-              )}
-            </div>
-          </div>
-        ))}
+          )
+        })}
 
         {players.length === 0 && (
           <div className="p-12 text-center text-foreground/50 font-mono">
