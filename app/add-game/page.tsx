@@ -59,11 +59,15 @@ export default function AddGame() {
   }
 
   const handleSubmit = async () => {
-    // Validate
+    // Validate: all positions filled
     if (positions.some(p => !p.playerId)) {
       alert('Please select a player for all positions')
       return
     }
+
+    // Validate: no duplicate players (same player in multiple non-rejoin positions)
+    // Note: duplicates ARE valid for UNO (rejoins), so we allow them.
+    // This validation is handled by normalizeRankings instead.
 
     setIsSubmitting(true)
     try {
@@ -123,9 +127,23 @@ export default function AddGame() {
                   onChange={(e) => handleChangePlayer(index, e.target.value)}
                 >
                   <option value="">Select Player...</option>
-                  {availablePlayers.map(p => (
-                    <option key={p.id} value={p.id}>{p.name}</option>
-                  ))}
+                  {availablePlayers.map(p => {
+                    // Count how many times this player is already selected
+                    const selectedCount = positions.filter(pos => pos.playerId === p.id).length
+                    const isCurrentSelection = pos.playerId === p.id
+                    // Allow if it's the current slot's selection, or if player isn't picked yet
+                    // Players CAN be selected multiple times (for rejoins)
+                    // But we dim them to signal they're already in the game
+                    return (
+                      <option 
+                        key={p.id} 
+                        value={p.id}
+                        className={selectedCount > 0 && !isCurrentSelection ? 'opacity-50' : ''}
+                      >
+                        {p.name}{selectedCount > 0 && !isCurrentSelection ? ` (already #${positions.findIndex(pos => pos.playerId === p.id) + 1})` : ''}
+                      </option>
+                    )
+                  })}
                 </select>
               </div>
               <button 

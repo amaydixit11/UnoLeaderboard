@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import { Player } from '@/types'
-import { ArrowUp, ArrowDown, Minus } from 'lucide-react'
+import { ArrowUp, ArrowDown, Minus, Hash } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 type PlayerStats = Player & {
   gamesPlayed: number
@@ -20,30 +21,37 @@ export default function Leaderboard() {
     const { data: playersData, error: playersError } = await supabase
       .from('players')
       .select('*')
-      .order('initial_elo', { ascending: false }) // Fallback sort
+      .order('initial_elo', { ascending: false })
 
     if (playersError) {
       console.error('Error fetching players:', playersError)
       return
     }
 
-    // 2. Fetch recent games for stats (simplified for MVP)
-    // In a real app, you'd likely have a materialized view or aggregated table
-    // For now, we'll fetch basic stats or just trust the 'initial_elo' which is actually 'current_elo' in our simplified schema logic 
-    // (Wait, my schema defined 'initial_elo', I should probably have used 'current_elo' or just 'elo'. 
-    // I will assume 'initial_elo' is updated to be the current elo for simplicity, or I should have renamed it.
-    // Let's assume the 'initial_elo' column tracks current Elo for now, or I'll fix the schema mental model.)
-    // Actually, looking at my logic plan, I said "Update players table with new Elos". 
-    // So 'initial_elo' is a bad name if it changes. I'll treat it as 'elo'.
+    // 2. Fetch game stats: count + most recent elo_change per player
+    const { data: allResults } = await supabase
+      .from('game_results')
+      .select('player_id, elo_change, game_id, games(played_at)')
+      .order('created_at', { ascending: false })
+
+    // Build stats map
+    const statsMap: Record<string, { gamesPlayed: number; recentChange: number }> = {}
+    if (allResults) {
+      for (const r of allResults) {
+        if (!statsMap[r.player_id]) {
+          statsMap[r.player_id] = { gamesPlayed: 0, recentChange: r.elo_change }
+        }
+        statsMap[r.player_id].gamesPlayed++
+      }
+    }
 
     const mappedPlayers = playersData.map((p) => ({
       ...p,
-      elo: p.initial_elo, // treating as current
-      gamesPlayed: 0, // TODO: Count from games
-      recentChange: 0, // TODO: Get from last game
+      elo: p.initial_elo,
+      gamesPlayed: statsMap[p.id]?.gamesPlayed ?? 0,
+      recentChange: statsMap[p.id]?.recentChange ?? 0,
     }))
 
-    // Sort by Elo
     mappedPlayers.sort((a, b) => b.elo - a.elo)
 
     setPlayers(mappedPlayers)
@@ -89,10 +97,11 @@ export default function Leaderboard() {
       
       <div className="divide-y-2 divide-foreground/10">
         <div className="grid grid-cols-12 gap-2 md:gap-4 p-3 md:p-4 font-mono text-xs md:text-sm opacity-50 uppercase tracking-wider">
-          <div className="col-span-2 md:col-span-2">Rank</div>
-          <div className="col-span-6 md:col-span-5">Player</div>
-          <div className="col-span-4 md:col-span-3 text-right">Rating</div>
-          <div className="hidden md:block md:col-span-2 text-right">Trend</div>
+          <div className="col-span-2 md:col-span-1">Rank</div>
+          <div className="col-span-4 md:col-span-4">Player</div>
+          <div className="col-span-3 md:col-span-3 text-right">Rating</div>
+          <div className="hidden md:block md:col-span-2 text-center">Games</div>
+          <div className="col-span-3 md:col-span-2 text-right">Trend</div>
         </div>
 
         {players.map((player, index) => (
@@ -106,19 +115,39 @@ export default function Leaderboard() {
                index === 0 ? "bg-uno-yellow" : index === 1 ? "bg-uno-green" : index === 2 ? "bg-uno-blue" : "bg-transparent"
             )} />
 
-            <div className={cn("col-span-2 font-mono text-xl md:text-2xl font-black", getRankColor(index))}>
+            <div className={cn("col-span-2 md:col-span-1 font-mono text-xl md:text-2xl font-black", getRankColor(index))}>
               #{index + 1}
             </div>
-            <div className="col-span-6 md:col-span-5 font-bold text-base md:text-lg truncate">
-              {player.name}
+            <div className="col-span-4 md:col-span-4 font-bold text-base md:text-lg truncate">
+              <Link href={`/player/${player.id}`} className="hover:text-uno-blue transition-colors hover:underline underline-offset-4">
+                {player.name}
+              </Link>
               {index === 0 && <span className="ml-2 text-base">👑</span>}
               {index === players.length - 1 && <span className="ml-2 text-base">🍆</span>}
             </div>
-            <div className="col-span-4 md:col-span-3 text-right font-mono text-lg md:text-xl font-bold tabular-nums">
+            <div className="col-span-3 md:col-span-3 text-right font-mono text-lg md:text-xl font-bold tabular-nums">
               {player.initial_elo}
             </div>
-            <div className="hidden md:flex md:col-span-2 justify-end">
-              <Minus className="opacity-20" />
+            <div className="hidden md:flex md:col-span-2 justify-center items-center gap-1 font-mono text-sm opacity-40">
+              <Hash size={12} />
+              {player.gamesPlayed}
+            </div>
+            <div className="col-span-3 md:col-span-2 flex justify-end items-center gap-1 font-mono text-sm font-bold">
+              {player.recentChange > 0 ? (
+                <span className="flex items-center gap-1 text-uno-green">
+                  <ArrowUp size={14} />
+                  +{player.recentChange}
+                </span>
+              ) : player.recentChange < 0 ? (
+                <span className="flex items-center gap-1 text-uno-red">
+                  <ArrowDown size={14} />
+                  {player.recentChange}
+                </span>
+              ) : (
+                <span className="flex items-center gap-1 opacity-20">
+                  <Minus size={14} />
+                </span>
+              )}
             </div>
           </div>
         ))}

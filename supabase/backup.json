@@ -1,0 +1,1772 @@
+
+[
+  {
+    "id": "011f80fa-482b-422c-8328-ca6447800371",
+    "name": "Shashank",
+    "initial_elo": 1022,
+    "created_at": "2026-02-06 11:59:08.332706+00"
+  },
+  {
+    "id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "name": "Akshay",
+    "initial_elo": 944,
+    "created_at": "2026-02-06 11:59:07.881705+00"
+  },
+  {
+    "id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "name": "Rohit",
+    "initial_elo": 1026,
+    "created_at": "2026-02-06 11:59:06.089622+00"
+  },
+  {
+    "id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "name": "Amay",
+    "initial_elo": 1001,
+    "created_at": "2026-02-06 11:59:07.457246+00"
+  },
+  {
+    "id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "name": "Rishi",
+    "initial_elo": 990,
+    "created_at": "2026-02-06 11:59:05.487103+00"
+  },
+  {
+    "id": "51e5bd19-eaa8-477b-b9c4-82065f585bd1",
+    "name": "Aman",
+    "initial_elo": 1039,
+    "created_at": "2026-02-08 10:49:07.425964+00"
+  },
+  {
+    "id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "name": "Chetan",
+    "initial_elo": 1038,
+    "created_at": "2026-02-06 11:59:04.995091+00"
+  },
+  {
+    "id": "d6488335-1382-4771-b728-da48a0da1461",
+    "name": "Farhan",
+    "initial_elo": 1002,
+    "created_at": "2026-02-06 11:59:08.685307+00"
+  },
+  {
+    "id": "7ab070a1-1cf6-4177-8f37-8f9cca331528",
+    "name": "Ashutosh",
+    "initial_elo": 894,
+    "created_at": "2026-02-07 18:59:20.226874+00"
+  },
+  {
+    "id": "b639362a-bd78-4ac5-baf2-924d5a7de776",
+    "name": "Saurav",
+    "initial_elo": 1007,
+    "created_at": "2026-02-06 11:59:06.483504+00"
+  },
+  {
+    "id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "name": "Kabeer",
+    "initial_elo": 1041,
+    "created_at": "2026-02-06 11:59:06.902011+00"
+  }
+]
+
+[
+  {
+    "id": "cd0f5db3-8c18-4f25-a954-fbb7806b57ed",
+    "played_at": "2026-01-07 12:00:00+00",
+    "total_players": 7,
+    "created_at": "2026-02-06 11:59:09.777529+00"
+  },
+  {
+    "id": "a6372c64-b4f9-4f00-89d4-4e29d4c5b65b",
+    "played_at": "2026-02-05 22:46:00+00",
+    "total_players": 6,
+    "created_at": "2026-02-06 11:59:12.539604+00"
+  },
+  {
+    "id": "76927f41-1fd7-46d0-aa8d-a9f027a32dd9",
+    "played_at": "2026-02-05 23:30:00+00",
+    "total_players": 6,
+    "created_at": "2026-02-06 11:59:14.361828+00"
+  },
+  {
+    "id": "db3f085a-f66a-4b9d-a364-7a2e29f4ddc8",
+    "played_at": "2026-02-06 13:20:00+00",
+    "total_players": 6,
+    "created_at": "2026-02-06 11:59:16.739765+00"
+  },
+  {
+    "id": "1a38aaf8-23d6-4262-a683-5424861d0ce3",
+    "played_at": "2026-02-06 13:50:00+00",
+    "total_players": 7,
+    "created_at": "2026-02-06 11:59:18.892867+00"
+  },
+  {
+    "id": "0bf99c97-dcec-4f1b-861b-2b085375926e",
+    "played_at": "2026-02-06 17:24:44.848+00",
+    "total_players": 7,
+    "created_at": "2026-02-06 17:24:44.956118+00"
+  },
+  {
+    "id": "b205b5d7-d3a3-4d18-b0f9-8a2049361208",
+    "played_at": "2026-02-07 18:59:40.512+00",
+    "total_players": 6,
+    "created_at": "2026-02-07 18:59:41.004169+00"
+  },
+  {
+    "id": "fe4babd9-437e-4a84-bf78-1d175e830a3c",
+    "played_at": "2026-02-07 20:20:06.151+00",
+    "total_players": 9,
+    "created_at": "2026-02-07 20:20:06.63135+00"
+  },
+  {
+    "id": "81b0fa41-7869-48bb-984f-bee09be37f04",
+    "played_at": "2026-02-08 10:51:23.845+00",
+    "total_players": 7,
+    "created_at": "2026-02-08 10:51:23.988366+00"
+  },
+  {
+    "id": "f04b1f8f-6677-478b-9b81-bdbadc92aec5",
+    "played_at": "2026-02-10 21:18:14.177+00",
+    "total_players": 8,
+    "created_at": "2026-02-10 21:18:14.312381+00"
+  },
+  {
+    "id": "927ae857-773a-4354-94ea-2bfa463fc76e",
+    "played_at": "2026-02-13 19:08:48.231+00",
+    "total_players": 9,
+    "created_at": "2026-02-13 19:08:48.391596+00"
+  },
+  {
+    "id": "4f3dc1f2-c4e2-4b67-a371-66a067c23760",
+    "played_at": "2026-02-17 17:01:02.782+00",
+    "total_players": 6,
+    "created_at": "2026-02-17 17:01:03.318596+00"
+  },
+  {
+    "id": "d09851d3-dc98-4123-99a2-277324255cec",
+    "played_at": "2026-02-18 08:38:51.494+00",
+    "total_players": 7,
+    "created_at": "2026-02-18 08:38:51.932803+00"
+  },
+  {
+    "id": "e656920e-f162-4304-a2a8-cdcfb472a411",
+    "played_at": "2026-02-20 18:03:04.56+00",
+    "total_players": 4,
+    "created_at": "2026-02-20 18:03:05.145374+00"
+  },
+  {
+    "id": "1a59efa9-eaa9-44dc-8ced-4cb21b60b864",
+    "played_at": "2026-02-22 18:47:52.819+00",
+    "total_players": 9,
+    "created_at": "2026-02-22 18:47:53.398931+00"
+  },
+  {
+    "id": "844878d7-a434-40a4-b2a7-4fd5604aa931",
+    "played_at": "2026-02-23 14:46:27.825+00",
+    "total_players": 7,
+    "created_at": "2026-02-23 14:46:28.435106+00"
+  },
+  {
+    "id": "1e76fc0b-e4a2-479b-b1de-d2fa1cc1b125",
+    "played_at": "2026-02-24 07:12:51.071+00",
+    "total_players": 8,
+    "created_at": "2026-02-24 07:12:51.223604+00"
+  }
+]
+
+
+
+[
+  {
+    "id": "c2abfff8-f0f4-44cf-9ab2-430281f33f80",
+    "game_id": "cd0f5db3-8c18-4f25-a954-fbb7806b57ed",
+    "player_id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 1000,
+    "elo_after": 1096,
+    "elo_change": 96,
+    "created_at": "2026-02-06 11:59:11.873079+00"
+  },
+  {
+    "id": "81fe1a94-a87b-497a-ad48-f866df609e4f",
+    "game_id": "cd0f5db3-8c18-4f25-a954-fbb7806b57ed",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 1000,
+    "elo_after": 1064,
+    "elo_change": 64,
+    "created_at": "2026-02-06 11:59:11.873079+00"
+  },
+  {
+    "id": "899bcb17-5a35-4b0a-bad4-fa6e2ba46e63",
+    "game_id": "cd0f5db3-8c18-4f25-a954-fbb7806b57ed",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 1000,
+    "elo_after": 1032,
+    "elo_change": 32,
+    "created_at": "2026-02-06 11:59:11.873079+00"
+  },
+  {
+    "id": "3f50d60f-b674-4bd7-9adb-bbd8b1b28e5e",
+    "game_id": "cd0f5db3-8c18-4f25-a954-fbb7806b57ed",
+    "player_id": "b639362a-bd78-4ac5-baf2-924d5a7de776",
+    "raw_positions": [
+      4
+    ],
+    "normalized_position": "4",
+    "elo_before": 1000,
+    "elo_after": 1000,
+    "elo_change": 0,
+    "created_at": "2026-02-06 11:59:11.873079+00"
+  },
+  {
+    "id": "5eb85eeb-1e87-41e6-9f24-6c9802e03359",
+    "game_id": "cd0f5db3-8c18-4f25-a954-fbb7806b57ed",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 1000,
+    "elo_after": 968,
+    "elo_change": -32,
+    "created_at": "2026-02-06 11:59:11.873079+00"
+  },
+  {
+    "id": "31bcfcad-d1ec-4137-926d-7cde7802db06",
+    "game_id": "cd0f5db3-8c18-4f25-a954-fbb7806b57ed",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 1000,
+    "elo_after": 936,
+    "elo_change": -64,
+    "created_at": "2026-02-06 11:59:11.873079+00"
+  },
+  {
+    "id": "c43da9f9-4cc1-475b-be0d-5b27a1556c42",
+    "game_id": "cd0f5db3-8c18-4f25-a954-fbb7806b57ed",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      7
+    ],
+    "normalized_position": "7",
+    "elo_before": 1000,
+    "elo_after": 904,
+    "elo_change": -96,
+    "created_at": "2026-02-06 11:59:11.873079+00"
+  },
+  {
+    "id": "a7dc655e-3ada-4207-b30a-b7204487ecf4",
+    "game_id": "a6372c64-b4f9-4f00-89d4-4e29d4c5b65b",
+    "player_id": "011f80fa-482b-422c-8328-ca6447800371",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 1000,
+    "elo_after": 1084,
+    "elo_change": 84,
+    "created_at": "2026-02-06 11:59:13.994292+00"
+  },
+  {
+    "id": "970ce2c7-fa6d-4f04-80e8-279ed47c11e4",
+    "game_id": "a6372c64-b4f9-4f00-89d4-4e29d4c5b65b",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 936,
+    "elo_after": 1005,
+    "elo_change": 69,
+    "created_at": "2026-02-06 11:59:13.994292+00"
+  },
+  {
+    "id": "650585f6-640e-421c-ab35-e4005e17ce79",
+    "game_id": "a6372c64-b4f9-4f00-89d4-4e29d4c5b65b",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 1064,
+    "elo_after": 1067,
+    "elo_change": 3,
+    "created_at": "2026-02-06 11:59:13.994292+00"
+  },
+  {
+    "id": "6add85db-3434-4891-b1bc-7a5ff92563aa",
+    "game_id": "a6372c64-b4f9-4f00-89d4-4e29d4c5b65b",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      3,
+      8
+    ],
+    "normalized_position": "5.5",
+    "elo_before": 968,
+    "elo_after": 965,
+    "elo_change": -3,
+    "created_at": "2026-02-06 11:59:13.994292+00"
+  },
+  {
+    "id": "173e79cd-013b-4998-8b26-3ff5c6ea2888",
+    "game_id": "a6372c64-b4f9-4f00-89d4-4e29d4c5b65b",
+    "player_id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 1096,
+    "elo_after": 1027,
+    "elo_change": -69,
+    "created_at": "2026-02-06 11:59:13.994292+00"
+  },
+  {
+    "id": "4ef13612-4fec-4db1-9ffd-2823a6fa936d",
+    "game_id": "a6372c64-b4f9-4f00-89d4-4e29d4c5b65b",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      4,
+      7,
+      9
+    ],
+    "normalized_position": "6.666666666666667",
+    "elo_before": 1032,
+    "elo_after": 948,
+    "elo_change": -84,
+    "created_at": "2026-02-06 11:59:13.994292+00"
+  },
+  {
+    "id": "d8101161-e68f-4620-8315-38a46f3e3bef",
+    "game_id": "76927f41-1fd7-46d0-aa8d-a9f027a32dd9",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 948,
+    "elo_after": 1039,
+    "elo_change": 91,
+    "created_at": "2026-02-06 11:59:16.230255+00"
+  },
+  {
+    "id": "d2efbc3c-3aa0-497f-847d-ef5a57a98dc3",
+    "game_id": "76927f41-1fd7-46d0-aa8d-a9f027a32dd9",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 904,
+    "elo_after": 974,
+    "elo_change": 70,
+    "created_at": "2026-02-06 11:59:16.230255+00"
+  },
+  {
+    "id": "88099f62-8e08-46e0-981e-7db7ae3a5972",
+    "game_id": "76927f41-1fd7-46d0-aa8d-a9f027a32dd9",
+    "player_id": "b639362a-bd78-4ac5-baf2-924d5a7de776",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 1000,
+    "elo_after": 1013,
+    "elo_change": 13,
+    "created_at": "2026-02-06 11:59:16.230255+00"
+  },
+  {
+    "id": "8079985a-8bfc-4eaf-9799-97132e2decc3",
+    "game_id": "76927f41-1fd7-46d0-aa8d-a9f027a32dd9",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      4
+    ],
+    "normalized_position": "4",
+    "elo_before": 1005,
+    "elo_after": 984,
+    "elo_change": -21,
+    "created_at": "2026-02-06 11:59:16.230255+00"
+  },
+  {
+    "id": "bdaf6a92-c8df-4fac-ad5a-8171a97daa7a",
+    "game_id": "76927f41-1fd7-46d0-aa8d-a9f027a32dd9",
+    "player_id": "d6488335-1382-4771-b728-da48a0da1461",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 1000,
+    "elo_after": 949,
+    "elo_change": -51,
+    "created_at": "2026-02-06 11:59:16.230255+00"
+  },
+  {
+    "id": "46865435-64bb-483a-a0b1-170308545874",
+    "game_id": "76927f41-1fd7-46d0-aa8d-a9f027a32dd9",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 1067,
+    "elo_after": 966,
+    "elo_change": -101,
+    "created_at": "2026-02-06 11:59:16.230255+00"
+  },
+  {
+    "id": "14f2024d-fa70-4760-ad81-bbc4ec928b43",
+    "game_id": "db3f085a-f66a-4b9d-a364-7a2e29f4ddc8",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 965,
+    "elo_after": 1055,
+    "elo_change": 90,
+    "created_at": "2026-02-06 11:59:18.372256+00"
+  },
+  {
+    "id": "68779c05-0a7b-476a-bdd7-7b568c3eec63",
+    "game_id": "db3f085a-f66a-4b9d-a364-7a2e29f4ddc8",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 984,
+    "elo_after": 1036,
+    "elo_change": 52,
+    "created_at": "2026-02-06 11:59:18.372256+00"
+  },
+  {
+    "id": "a972daab-0f3a-4e29-982b-57078eaafcd3",
+    "game_id": "db3f085a-f66a-4b9d-a364-7a2e29f4ddc8",
+    "player_id": "b639362a-bd78-4ac5-baf2-924d5a7de776",
+    "raw_positions": [
+      4
+    ],
+    "normalized_position": "4",
+    "elo_before": 1013,
+    "elo_after": 1026,
+    "elo_change": 13,
+    "created_at": "2026-02-06 11:59:18.372256+00"
+  },
+  {
+    "id": "b4502f3f-19c3-40ba-825a-914d3e4cf8cd",
+    "game_id": "db3f085a-f66a-4b9d-a364-7a2e29f4ddc8",
+    "player_id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 1027,
+    "elo_after": 1004,
+    "elo_change": -23,
+    "created_at": "2026-02-06 11:59:18.372256+00"
+  },
+  {
+    "id": "82933e01-fc30-428a-9bb2-dd9c098ddf3d",
+    "game_id": "db3f085a-f66a-4b9d-a364-7a2e29f4ddc8",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      1,
+      7,
+      9
+    ],
+    "normalized_position": "5.666666666666667",
+    "elo_before": 1039,
+    "elo_after": 980,
+    "elo_change": -59,
+    "created_at": "2026-02-06 11:59:18.372256+00"
+  },
+  {
+    "id": "dbc55b28-0dcf-4985-b9db-27b9ced7a490",
+    "game_id": "db3f085a-f66a-4b9d-a364-7a2e29f4ddc8",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      6,
+      8
+    ],
+    "normalized_position": "7",
+    "elo_before": 974,
+    "elo_after": 901,
+    "elo_change": -73,
+    "created_at": "2026-02-06 11:59:18.372256+00"
+  },
+  {
+    "id": "6ed794be-1dd2-4cee-8215-628c8249aaca",
+    "game_id": "1a38aaf8-23d6-4262-a683-5424861d0ce3",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 966,
+    "elo_after": 1071,
+    "elo_change": 105,
+    "created_at": "2026-02-06 11:59:21.037564+00"
+  },
+  {
+    "id": "015f32dc-456d-4a8a-9ad5-176523df7ed0",
+    "game_id": "1a38aaf8-23d6-4262-a683-5424861d0ce3",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 901,
+    "elo_after": 994,
+    "elo_change": 93,
+    "created_at": "2026-02-06 11:59:21.037564+00"
+  },
+  {
+    "id": "0aa51293-af86-428e-81db-0b5d31cd1801",
+    "game_id": "1a38aaf8-23d6-4262-a683-5424861d0ce3",
+    "player_id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 1004,
+    "elo_after": 1033,
+    "elo_change": 29,
+    "created_at": "2026-02-06 11:59:21.037564+00"
+  },
+  {
+    "id": "6c6851cb-b9c6-408e-a6eb-2a3d34c3a9ff",
+    "game_id": "1a38aaf8-23d6-4262-a683-5424861d0ce3",
+    "player_id": "b639362a-bd78-4ac5-baf2-924d5a7de776",
+    "raw_positions": [
+      4
+    ],
+    "normalized_position": "4",
+    "elo_before": 1026,
+    "elo_after": 1016,
+    "elo_change": -10,
+    "created_at": "2026-02-06 11:59:21.037564+00"
+  },
+  {
+    "id": "7a049fed-5aed-45b5-9ee7-0ce4fd54c16d",
+    "game_id": "1a38aaf8-23d6-4262-a683-5424861d0ce3",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      5,
+      9
+    ],
+    "normalized_position": "7",
+    "elo_before": 1036,
+    "elo_after": 975,
+    "elo_change": -61,
+    "created_at": "2026-02-06 11:59:21.037564+00"
+  },
+  {
+    "id": "6454946a-ce50-4518-97a0-aabeba497558",
+    "game_id": "1a38aaf8-23d6-4262-a683-5424861d0ce3",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      7
+    ],
+    "normalized_position": "7",
+    "elo_before": 980,
+    "elo_after": 937,
+    "elo_change": -43,
+    "created_at": "2026-02-06 11:59:21.037564+00"
+  },
+  {
+    "id": "7f4f64df-6ab8-4d55-a508-a07cb0d2b459",
+    "game_id": "1a38aaf8-23d6-4262-a683-5424861d0ce3",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      6,
+      8,
+      10,
+      11
+    ],
+    "normalized_position": "8.75",
+    "elo_before": 1055,
+    "elo_after": 940,
+    "elo_change": -115,
+    "created_at": "2026-02-06 11:59:21.037564+00"
+  },
+  {
+    "id": "2e020303-a82b-45e4-a5c6-630dcb48578a",
+    "game_id": "0bf99c97-dcec-4f1b-861b-2b085375926e",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 975,
+    "elo_after": 1027,
+    "elo_change": 52,
+    "created_at": "2026-02-06 17:24:47.785216+00"
+  },
+  {
+    "id": "cfe425ba-a377-4818-b4d3-4a63e2cbbade",
+    "game_id": "0bf99c97-dcec-4f1b-861b-2b085375926e",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 940,
+    "elo_after": 982,
+    "elo_change": 42,
+    "created_at": "2026-02-06 17:24:47.785216+00"
+  },
+  {
+    "id": "54fa1db7-04b4-4052-9744-a5e11ccda279",
+    "game_id": "0bf99c97-dcec-4f1b-861b-2b085375926e",
+    "player_id": "011f80fa-482b-422c-8328-ca6447800371",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 1084,
+    "elo_after": 1087,
+    "elo_change": 3,
+    "created_at": "2026-02-06 17:24:47.785216+00"
+  },
+  {
+    "id": "958902dd-699b-45bc-95d8-33e3983b1df1",
+    "game_id": "0bf99c97-dcec-4f1b-861b-2b085375926e",
+    "player_id": "b639362a-bd78-4ac5-baf2-924d5a7de776",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 1016,
+    "elo_after": 1014,
+    "elo_change": -2,
+    "created_at": "2026-02-06 17:24:47.785216+00"
+  },
+  {
+    "id": "d27a631d-065b-490c-a4da-3cdf164a13b5",
+    "game_id": "0bf99c97-dcec-4f1b-861b-2b085375926e",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      4,
+      8
+    ],
+    "normalized_position": "6",
+    "elo_before": 937,
+    "elo_after": 923,
+    "elo_change": -14,
+    "created_at": "2026-02-06 17:24:47.785216+00"
+  },
+  {
+    "id": "aa25c6c7-3096-4d4c-8838-c6dda85d75ee",
+    "game_id": "0bf99c97-dcec-4f1b-861b-2b085375926e",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 994,
+    "elo_after": 971,
+    "elo_change": -23,
+    "created_at": "2026-02-06 17:24:47.785216+00"
+  },
+  {
+    "id": "a96a0411-5e34-408b-9da6-99bf756d80e2",
+    "game_id": "0bf99c97-dcec-4f1b-861b-2b085375926e",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      7,
+      9
+    ],
+    "normalized_position": "8",
+    "elo_before": 1071,
+    "elo_after": 1012,
+    "elo_change": -59,
+    "created_at": "2026-02-06 17:24:47.785216+00"
+  },
+  {
+    "id": "902814fa-d26a-4327-8935-dd24bd2d564a",
+    "game_id": "b205b5d7-d3a3-4d18-b0f9-8a2049361208",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 982,
+    "elo_after": 1023,
+    "elo_change": 41,
+    "created_at": "2026-02-07 18:59:43.37366+00"
+  },
+  {
+    "id": "02674e51-5e5d-46de-945d-5785a95c2439",
+    "game_id": "b205b5d7-d3a3-4d18-b0f9-8a2049361208",
+    "player_id": "d6488335-1382-4771-b728-da48a0da1461",
+    "raw_positions": [
+      1,
+      4
+    ],
+    "normalized_position": "2.5",
+    "elo_before": 949,
+    "elo_after": 979,
+    "elo_change": 30,
+    "created_at": "2026-02-07 18:59:43.37366+00"
+  },
+  {
+    "id": "8f0cc5af-3dca-4398-a8f0-e11972106324",
+    "game_id": "b205b5d7-d3a3-4d18-b0f9-8a2049361208",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 1027,
+    "elo_after": 1030,
+    "elo_change": 3,
+    "created_at": "2026-02-07 18:59:43.37366+00"
+  },
+  {
+    "id": "5ed0f3a8-3f25-48bb-9aab-b3f1d4c96d3d",
+    "game_id": "b205b5d7-d3a3-4d18-b0f9-8a2049361208",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 971,
+    "elo_after": 966,
+    "elo_change": -5,
+    "created_at": "2026-02-07 18:59:43.37366+00"
+  },
+  {
+    "id": "0fb90377-08b8-4662-8659-f1300be215a3",
+    "game_id": "b205b5d7-d3a3-4d18-b0f9-8a2049361208",
+    "player_id": "7ab070a1-1cf6-4177-8f37-8f9cca331528",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 1000,
+    "elo_after": 975,
+    "elo_change": -25,
+    "created_at": "2026-02-07 18:59:43.37366+00"
+  },
+  {
+    "id": "276cceb9-7b45-4ed3-af4c-3f878ea319d2",
+    "game_id": "b205b5d7-d3a3-4d18-b0f9-8a2049361208",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      7
+    ],
+    "normalized_position": "7",
+    "elo_before": 1012,
+    "elo_after": 969,
+    "elo_change": -43,
+    "created_at": "2026-02-07 18:59:43.37366+00"
+  },
+  {
+    "id": "acfe3fa0-f785-490d-9596-5e4288808512",
+    "game_id": "fe4babd9-437e-4a84-bf78-1d175e830a3c",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 923,
+    "elo_after": 1002,
+    "elo_change": 79,
+    "created_at": "2026-02-07 20:20:09.206305+00"
+  },
+  {
+    "id": "ce8a51ee-5851-4c2a-9033-1377cf19adb4",
+    "game_id": "fe4babd9-437e-4a84-bf78-1d175e830a3c",
+    "player_id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 1033,
+    "elo_after": 1074,
+    "elo_change": 41,
+    "created_at": "2026-02-07 20:20:09.206305+00"
+  },
+  {
+    "id": "b5121c9c-cc38-4519-921f-7232ec0aa73b",
+    "game_id": "fe4babd9-437e-4a84-bf78-1d175e830a3c",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      3,
+      11
+    ],
+    "normalized_position": "7",
+    "elo_before": 1023,
+    "elo_after": 1050,
+    "elo_change": 27,
+    "created_at": "2026-02-07 20:20:09.206305+00"
+  },
+  {
+    "id": "c6c963bd-5b3b-4f77-917f-7127803d082b",
+    "game_id": "fe4babd9-437e-4a84-bf78-1d175e830a3c",
+    "player_id": "011f80fa-482b-422c-8328-ca6447800371",
+    "raw_positions": [
+      5,
+      10
+    ],
+    "normalized_position": "7.5",
+    "elo_before": 1087,
+    "elo_after": 1085,
+    "elo_change": -2,
+    "created_at": "2026-02-07 20:20:09.206305+00"
+  },
+  {
+    "id": "da7e2d4c-68ae-44b0-9e11-36bcad9a683b",
+    "game_id": "fe4babd9-437e-4a84-bf78-1d175e830a3c",
+    "player_id": "d6488335-1382-4771-b728-da48a0da1461",
+    "raw_positions": [
+      4,
+      12
+    ],
+    "normalized_position": "8",
+    "elo_before": 979,
+    "elo_after": 983,
+    "elo_change": 4,
+    "created_at": "2026-02-07 20:20:09.206305+00"
+  },
+  {
+    "id": "50782766-f898-4336-82d3-eb7b2509a195",
+    "game_id": "fe4babd9-437e-4a84-bf78-1d175e830a3c",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      2,
+      16
+    ],
+    "normalized_position": "9",
+    "elo_before": 969,
+    "elo_after": 959,
+    "elo_change": -10,
+    "created_at": "2026-02-07 20:20:09.206305+00"
+  },
+  {
+    "id": "ab153427-a00d-4d66-8fc8-e84325ff0d3e",
+    "game_id": "fe4babd9-437e-4a84-bf78-1d175e830a3c",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      7,
+      13
+    ],
+    "normalized_position": "10",
+    "elo_before": 1030,
+    "elo_after": 992,
+    "elo_change": -38,
+    "created_at": "2026-02-07 20:20:09.206305+00"
+  },
+  {
+    "id": "28260a5f-ebf7-480f-985a-ad79f4b294c8",
+    "game_id": "fe4babd9-437e-4a84-bf78-1d175e830a3c",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      8,
+      15
+    ],
+    "normalized_position": "11.5",
+    "elo_before": 966,
+    "elo_after": 917,
+    "elo_change": -49,
+    "created_at": "2026-02-07 20:20:09.206305+00"
+  },
+  {
+    "id": "fd0a3f8a-6bcb-4dda-82f3-257247fa939e",
+    "game_id": "fe4babd9-437e-4a84-bf78-1d175e830a3c",
+    "player_id": "7ab070a1-1cf6-4177-8f37-8f9cca331528",
+    "raw_positions": [
+      9,
+      14
+    ],
+    "normalized_position": "11.5",
+    "elo_before": 975,
+    "elo_after": 924,
+    "elo_change": -51,
+    "created_at": "2026-02-07 20:20:09.206305+00"
+  },
+  {
+    "id": "5106677c-8ca7-4c67-b682-2b722258973e",
+    "game_id": "81b0fa41-7869-48bb-984f-bee09be37f04",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 917,
+    "elo_after": 978,
+    "elo_change": 61,
+    "created_at": "2026-02-08 10:51:26.896593+00"
+  },
+  {
+    "id": "716bb77c-caf3-4947-a008-e4a0cee300e1",
+    "game_id": "81b0fa41-7869-48bb-984f-bee09be37f04",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 959,
+    "elo_after": 997,
+    "elo_change": 38,
+    "created_at": "2026-02-08 10:51:26.896593+00"
+  },
+  {
+    "id": "a1628418-cbc3-4054-b662-5dadfa5b47b9",
+    "game_id": "81b0fa41-7869-48bb-984f-bee09be37f04",
+    "player_id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "raw_positions": [
+      3,
+      8
+    ],
+    "normalized_position": "5.5",
+    "elo_before": 1074,
+    "elo_after": 1078,
+    "elo_change": 4,
+    "created_at": "2026-02-08 10:51:26.896593+00"
+  },
+  {
+    "id": "bd868666-ada3-4a55-9848-86d0ad3edc38",
+    "game_id": "81b0fa41-7869-48bb-984f-bee09be37f04",
+    "player_id": "51e5bd19-eaa8-477b-b9c4-82065f585bd1",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 1000,
+    "elo_after": 1000,
+    "elo_change": 0,
+    "created_at": "2026-02-08 10:51:26.896593+00"
+  },
+  {
+    "id": "a2abe29e-7a96-43a9-844f-cb89e9c6abdb",
+    "game_id": "81b0fa41-7869-48bb-984f-bee09be37f04",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      4,
+      10
+    ],
+    "normalized_position": "7",
+    "elo_before": 1002,
+    "elo_after": 986,
+    "elo_change": -16,
+    "created_at": "2026-02-08 10:51:26.896593+00"
+  },
+  {
+    "id": "582e3b2e-4d2b-46fb-8331-000358a9184a",
+    "game_id": "81b0fa41-7869-48bb-984f-bee09be37f04",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      5,
+      9,
+      12
+    ],
+    "normalized_position": "8.666666666666666",
+    "elo_before": 992,
+    "elo_after": 961,
+    "elo_change": -31,
+    "created_at": "2026-02-08 10:51:26.896593+00"
+  },
+  {
+    "id": "8e8d2f1d-b7de-49b2-97a7-6719fd6b4113",
+    "game_id": "81b0fa41-7869-48bb-984f-bee09be37f04",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      7,
+      11
+    ],
+    "normalized_position": "9",
+    "elo_before": 1050,
+    "elo_after": 994,
+    "elo_change": -56,
+    "created_at": "2026-02-08 10:51:26.896593+00"
+  },
+  {
+    "id": "594df04e-70b3-404e-bdb1-d66b4f0b4b8e",
+    "game_id": "f04b1f8f-6677-478b-9b81-bdbadc92aec5",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 961,
+    "elo_after": 1023,
+    "elo_change": 62,
+    "created_at": "2026-02-10 21:18:17.434559+00"
+  },
+  {
+    "id": "91823e93-4d4a-45d4-8304-5d08c657c594",
+    "game_id": "f04b1f8f-6677-478b-9b81-bdbadc92aec5",
+    "player_id": "51e5bd19-eaa8-477b-b9c4-82065f585bd1",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 1000,
+    "elo_after": 1039,
+    "elo_change": 39,
+    "created_at": "2026-02-10 21:18:17.434559+00"
+  },
+  {
+    "id": "be7902ef-8ab5-4983-b633-63aadeb867cf",
+    "game_id": "f04b1f8f-6677-478b-9b81-bdbadc92aec5",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      4
+    ],
+    "normalized_position": "4",
+    "elo_before": 986,
+    "elo_after": 1011,
+    "elo_change": 25,
+    "created_at": "2026-02-10 21:18:17.434559+00"
+  },
+  {
+    "id": "91f005e0-9247-4914-90d8-6a58f9f49994",
+    "game_id": "f04b1f8f-6677-478b-9b81-bdbadc92aec5",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 994,
+    "elo_after": 1002,
+    "elo_change": 8,
+    "created_at": "2026-02-10 21:18:17.434559+00"
+  },
+  {
+    "id": "2da393c5-ecad-41b9-a7a3-447d066cc4cd",
+    "game_id": "f04b1f8f-6677-478b-9b81-bdbadc92aec5",
+    "player_id": "b639362a-bd78-4ac5-baf2-924d5a7de776",
+    "raw_positions": [
+      1,
+      11
+    ],
+    "normalized_position": "6",
+    "elo_before": 1014,
+    "elo_after": 994,
+    "elo_change": -20,
+    "created_at": "2026-02-10 21:18:17.434559+00"
+  },
+  {
+    "id": "aa4fdf06-0420-4e31-85b7-6a1dac0b383a",
+    "game_id": "f04b1f8f-6677-478b-9b81-bdbadc92aec5",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 978,
+    "elo_after": 965,
+    "elo_change": -13,
+    "created_at": "2026-02-10 21:18:17.434559+00"
+  },
+  {
+    "id": "6851f6df-2283-4fe0-bbce-95ac6cf7128d",
+    "game_id": "f04b1f8f-6677-478b-9b81-bdbadc92aec5",
+    "player_id": "7ab070a1-1cf6-4177-8f37-8f9cca331528",
+    "raw_positions": [
+      7,
+      9
+    ],
+    "normalized_position": "8",
+    "elo_before": 924,
+    "elo_after": 896,
+    "elo_change": -28,
+    "created_at": "2026-02-10 21:18:17.434559+00"
+  },
+  {
+    "id": "2b2955af-0ae7-4ab4-9578-72ba831a52a1",
+    "game_id": "f04b1f8f-6677-478b-9b81-bdbadc92aec5",
+    "player_id": "011f80fa-482b-422c-8328-ca6447800371",
+    "raw_positions": [
+      8,
+      10
+    ],
+    "normalized_position": "9",
+    "elo_before": 1085,
+    "elo_after": 1013,
+    "elo_change": -72,
+    "created_at": "2026-02-10 21:18:17.434559+00"
+  },
+  {
+    "id": "76bdd93b-6ce2-4a3e-a73f-c0dd9a0452aa",
+    "game_id": "927ae857-773a-4354-94ea-2bfa463fc76e",
+    "player_id": "b639362a-bd78-4ac5-baf2-924d5a7de776",
+    "raw_positions": [
+      1,
+      6
+    ],
+    "normalized_position": "3.5",
+    "elo_before": 994,
+    "elo_after": 1057,
+    "elo_change": 63,
+    "created_at": "2026-02-13 19:08:51.914576+00"
+  },
+  {
+    "id": "d5a481ae-f54c-49e4-8b09-669580c06e33",
+    "game_id": "927ae857-773a-4354-94ea-2bfa463fc76e",
+    "player_id": "7ab070a1-1cf6-4177-8f37-8f9cca331528",
+    "raw_positions": [
+      4,
+      8
+    ],
+    "normalized_position": "6",
+    "elo_before": 896,
+    "elo_after": 962,
+    "elo_change": 66,
+    "created_at": "2026-02-13 19:08:51.914576+00"
+  },
+  {
+    "id": "1ac539b7-ab24-4419-8d7f-5c45bc67fdc9",
+    "game_id": "927ae857-773a-4354-94ea-2bfa463fc76e",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      3,
+      10
+    ],
+    "normalized_position": "6.5",
+    "elo_before": 1002,
+    "elo_after": 1031,
+    "elo_change": 29,
+    "created_at": "2026-02-13 19:08:51.914576+00"
+  },
+  {
+    "id": "9d025a8e-7aad-4ccb-892f-d40329ecb282",
+    "game_id": "927ae857-773a-4354-94ea-2bfa463fc76e",
+    "player_id": "011f80fa-482b-422c-8328-ca6447800371",
+    "raw_positions": [
+      2,
+      12
+    ],
+    "normalized_position": "7",
+    "elo_before": 1013,
+    "elo_after": 1024,
+    "elo_change": 11,
+    "created_at": "2026-02-13 19:08:51.914576+00"
+  },
+  {
+    "id": "2d76dd5c-519f-4008-8673-0828dc9d48ad",
+    "game_id": "927ae857-773a-4354-94ea-2bfa463fc76e",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      9
+    ],
+    "normalized_position": "9",
+    "elo_before": 1011,
+    "elo_after": 1006,
+    "elo_change": -5,
+    "created_at": "2026-02-13 19:08:51.914576+00"
+  },
+  {
+    "id": "f07fe846-0388-451d-946b-2b76b726139d",
+    "game_id": "927ae857-773a-4354-94ea-2bfa463fc76e",
+    "player_id": "d6488335-1382-4771-b728-da48a0da1461",
+    "raw_positions": [
+      5,
+      15
+    ],
+    "normalized_position": "10",
+    "elo_before": 983,
+    "elo_after": 960,
+    "elo_change": -23,
+    "created_at": "2026-02-13 19:08:51.914576+00"
+  },
+  {
+    "id": "0d4633c9-f3c8-41b2-835d-2cec9e264bd8",
+    "game_id": "927ae857-773a-4354-94ea-2bfa463fc76e",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      7,
+      13
+    ],
+    "normalized_position": "10",
+    "elo_before": 965,
+    "elo_after": 946,
+    "elo_change": -19,
+    "created_at": "2026-02-13 19:08:51.914576+00"
+  },
+  {
+    "id": "2f788c80-5648-4769-baca-970e3eeeccdb",
+    "game_id": "927ae857-773a-4354-94ea-2bfa463fc76e",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      11
+    ],
+    "normalized_position": "11",
+    "elo_before": 1023,
+    "elo_after": 968,
+    "elo_change": -55,
+    "created_at": "2026-02-13 19:08:51.914576+00"
+  },
+  {
+    "id": "6897d6e4-c09d-423d-8d16-12d4bfb43112",
+    "game_id": "927ae857-773a-4354-94ea-2bfa463fc76e",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      14,
+      16
+    ],
+    "normalized_position": "15",
+    "elo_before": 997,
+    "elo_after": 931,
+    "elo_change": -66,
+    "created_at": "2026-02-13 19:08:51.914576+00"
+  },
+  {
+    "id": "1e64ec0e-c90a-42a8-865c-bbacaa2b13a5",
+    "game_id": "4f3dc1f2-c4e2-4b67-a371-66a067c23760",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 946,
+    "elo_after": 991,
+    "elo_change": 45,
+    "created_at": "2026-02-17 17:01:06.112331+00"
+  },
+  {
+    "id": "78866d7f-1df7-4c4e-a181-0c7426804825",
+    "game_id": "4f3dc1f2-c4e2-4b67-a371-66a067c23760",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 1031,
+    "elo_after": 1048,
+    "elo_change": 17,
+    "created_at": "2026-02-17 17:01:06.112331+00"
+  },
+  {
+    "id": "ffc2af24-2321-44f6-8a12-2e42b2db59c7",
+    "game_id": "4f3dc1f2-c4e2-4b67-a371-66a067c23760",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 968,
+    "elo_after": 978,
+    "elo_change": 10,
+    "created_at": "2026-02-17 17:01:06.112331+00"
+  },
+  {
+    "id": "1099cbdf-aac9-4533-ae90-344dd08dc3e3",
+    "game_id": "4f3dc1f2-c4e2-4b67-a371-66a067c23760",
+    "player_id": "7ab070a1-1cf6-4177-8f37-8f9cca331528",
+    "raw_positions": [
+      4
+    ],
+    "normalized_position": "4",
+    "elo_before": 962,
+    "elo_after": 957,
+    "elo_change": -5,
+    "created_at": "2026-02-17 17:01:06.112331+00"
+  },
+  {
+    "id": "082bfc5d-d6fe-4713-8900-6ae53d4da8c7",
+    "game_id": "4f3dc1f2-c4e2-4b67-a371-66a067c23760",
+    "player_id": "d6488335-1382-4771-b728-da48a0da1461",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 960,
+    "elo_after": 939,
+    "elo_change": -21,
+    "created_at": "2026-02-17 17:01:06.112331+00"
+  },
+  {
+    "id": "8f0fe233-90dd-47d0-9e50-cadc20639da9",
+    "game_id": "4f3dc1f2-c4e2-4b67-a371-66a067c23760",
+    "player_id": "011f80fa-482b-422c-8328-ca6447800371",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 1024,
+    "elo_after": 978,
+    "elo_change": -46,
+    "created_at": "2026-02-17 17:01:06.112331+00"
+  },
+  {
+    "id": "ed005378-b9ca-48e7-b693-cb6389bed094",
+    "game_id": "d09851d3-dc98-4123-99a2-277324255cec",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 978,
+    "elo_after": 1027,
+    "elo_change": 49,
+    "created_at": "2026-02-18 08:38:54.235192+00"
+  },
+  {
+    "id": "40546793-79f3-4e91-b30b-3f9458de1305",
+    "game_id": "d09851d3-dc98-4123-99a2-277324255cec",
+    "player_id": "d6488335-1382-4771-b728-da48a0da1461",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 939,
+    "elo_after": 978,
+    "elo_change": 39,
+    "created_at": "2026-02-18 08:38:54.235192+00"
+  },
+  {
+    "id": "e2cd4772-3b3c-4fc2-8753-63ab10f47734",
+    "game_id": "d09851d3-dc98-4123-99a2-277324255cec",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      4
+    ],
+    "normalized_position": "4",
+    "elo_before": 1048,
+    "elo_after": 1054,
+    "elo_change": 6,
+    "created_at": "2026-02-18 08:38:54.235192+00"
+  },
+  {
+    "id": "d6146dee-33e1-43c3-a9e5-37ef800de3af",
+    "game_id": "d09851d3-dc98-4123-99a2-277324255cec",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      2,
+      8
+    ],
+    "normalized_position": "5",
+    "elo_before": 931,
+    "elo_after": 931,
+    "elo_change": 0,
+    "created_at": "2026-02-18 08:38:54.235192+00"
+  },
+  {
+    "id": "8376f6d2-d6fa-4f31-b7a7-620a02073133",
+    "game_id": "d09851d3-dc98-4123-99a2-277324255cec",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 991,
+    "elo_after": 981,
+    "elo_change": -10,
+    "created_at": "2026-02-18 08:38:54.235192+00"
+  },
+  {
+    "id": "f182a244-4423-43cb-9c5c-370516f5c410",
+    "game_id": "d09851d3-dc98-4123-99a2-277324255cec",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 1006,
+    "elo_after": 970,
+    "elo_change": -36,
+    "created_at": "2026-02-18 08:38:54.235192+00"
+  },
+  {
+    "id": "addd94f6-0ab7-4535-af57-950ee5512d35",
+    "game_id": "d09851d3-dc98-4123-99a2-277324255cec",
+    "player_id": "011f80fa-482b-422c-8328-ca6447800371",
+    "raw_positions": [
+      7
+    ],
+    "normalized_position": "7",
+    "elo_before": 978,
+    "elo_after": 931,
+    "elo_change": -47,
+    "created_at": "2026-02-18 08:38:54.235192+00"
+  },
+  {
+    "id": "3adecd88-fb17-4f32-a00c-23b37c0b2694",
+    "game_id": "e656920e-f162-4304-a2a8-cdcfb472a411",
+    "player_id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 1078,
+    "elo_after": 1096,
+    "elo_change": 18,
+    "created_at": "2026-02-20 18:03:07.559014+00"
+  },
+  {
+    "id": "48a6df9d-6b4f-4b3b-9e77-2f384c88416a",
+    "game_id": "e656920e-f162-4304-a2a8-cdcfb472a411",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 970,
+    "elo_after": 981,
+    "elo_change": 11,
+    "created_at": "2026-02-20 18:03:07.559014+00"
+  },
+  {
+    "id": "35b9d36d-6fc9-484f-8027-33760b7b02c5",
+    "game_id": "e656920e-f162-4304-a2a8-cdcfb472a411",
+    "player_id": "011f80fa-482b-422c-8328-ca6447800371",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 931,
+    "elo_after": 930,
+    "elo_change": -1,
+    "created_at": "2026-02-20 18:03:07.559014+00"
+  },
+  {
+    "id": "1d62c4f7-44fe-42b5-97c8-ce415834d148",
+    "game_id": "e656920e-f162-4304-a2a8-cdcfb472a411",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      4
+    ],
+    "normalized_position": "4",
+    "elo_before": 1054,
+    "elo_after": 1026,
+    "elo_change": -28,
+    "created_at": "2026-02-20 18:03:07.559014+00"
+  },
+  {
+    "id": "0cbb894a-086c-45a7-a3b9-1d6723d52d6c",
+    "game_id": "1a59efa9-eaa9-44dc-8ced-4cb21b60b864",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 1026,
+    "elo_after": 1083,
+    "elo_change": 57,
+    "created_at": "2026-02-22 18:47:56.897003+00"
+  },
+  {
+    "id": "ef79870d-2bd2-4ba5-865b-9e327326dd41",
+    "game_id": "1a59efa9-eaa9-44dc-8ced-4cb21b60b864",
+    "player_id": "011f80fa-482b-422c-8328-ca6447800371",
+    "raw_positions": [
+      4
+    ],
+    "normalized_position": "4",
+    "elo_before": 930,
+    "elo_after": 990,
+    "elo_change": 60,
+    "created_at": "2026-02-22 18:47:56.897003+00"
+  },
+  {
+    "id": "eeda02ae-8ab8-4338-a02b-86a21f165b61",
+    "game_id": "1a59efa9-eaa9-44dc-8ced-4cb21b60b864",
+    "player_id": "d6488335-1382-4771-b728-da48a0da1461",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 978,
+    "elo_after": 1012,
+    "elo_change": 34,
+    "created_at": "2026-02-22 18:47:56.897003+00"
+  },
+  {
+    "id": "ad1db232-e097-4de9-8fde-4a2900d83a6b",
+    "game_id": "1a59efa9-eaa9-44dc-8ced-4cb21b60b864",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 931,
+    "elo_after": 959,
+    "elo_change": 28,
+    "created_at": "2026-02-22 18:47:56.897003+00"
+  },
+  {
+    "id": "90e8ad99-2d71-49b5-a724-f2406f21daeb",
+    "game_id": "1a59efa9-eaa9-44dc-8ced-4cb21b60b864",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      3,
+      10
+    ],
+    "normalized_position": "6.5",
+    "elo_before": 981,
+    "elo_after": 983,
+    "elo_change": 2,
+    "created_at": "2026-02-22 18:47:56.897003+00"
+  },
+  {
+    "id": "6a2d0702-9bbf-420b-8eb0-3d003921a92f",
+    "game_id": "1a59efa9-eaa9-44dc-8ced-4cb21b60b864",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      2,
+      12
+    ],
+    "normalized_position": "7",
+    "elo_before": 981,
+    "elo_after": 967,
+    "elo_change": -14,
+    "created_at": "2026-02-22 18:47:56.897003+00"
+  },
+  {
+    "id": "54ea1982-89f3-433c-8161-50be69335a8d",
+    "game_id": "1a59efa9-eaa9-44dc-8ced-4cb21b60b864",
+    "player_id": "7ab070a1-1cf6-4177-8f37-8f9cca331528",
+    "raw_positions": [
+      8,
+      11
+    ],
+    "normalized_position": "9.5",
+    "elo_before": 957,
+    "elo_after": 932,
+    "elo_change": -25,
+    "created_at": "2026-02-22 18:47:56.897003+00"
+  },
+  {
+    "id": "45356c71-c312-4d73-a002-43fc91846366",
+    "game_id": "1a59efa9-eaa9-44dc-8ced-4cb21b60b864",
+    "player_id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "raw_positions": [
+      7,
+      13
+    ],
+    "normalized_position": "10",
+    "elo_before": 1096,
+    "elo_after": 1027,
+    "elo_change": -69,
+    "created_at": "2026-02-22 18:47:56.897003+00"
+  },
+  {
+    "id": "93a8a8e7-edb9-4a9b-9f54-b18554978d78",
+    "game_id": "1a59efa9-eaa9-44dc-8ced-4cb21b60b864",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      9,
+      14
+    ],
+    "normalized_position": "11.5",
+    "elo_before": 1027,
+    "elo_after": 955,
+    "elo_change": -72,
+    "created_at": "2026-02-22 18:47:56.897003+00"
+  },
+  {
+    "id": "2e477a8f-a4f2-4202-9de5-9a387a3d52d7",
+    "game_id": "844878d7-a434-40a4-b2a7-4fd5604aa931",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 1083,
+    "elo_after": 1117,
+    "elo_change": 34,
+    "created_at": "2026-02-23 14:46:32.352862+00"
+  },
+  {
+    "id": "c06dd986-5ef9-445c-a361-0f55215d5e17",
+    "game_id": "844878d7-a434-40a4-b2a7-4fd5604aa931",
+    "player_id": "011f80fa-482b-422c-8328-ca6447800371",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 990,
+    "elo_after": 1022,
+    "elo_change": 32,
+    "created_at": "2026-02-23 14:46:32.352862+00"
+  },
+  {
+    "id": "ba9b57f0-f303-4656-957b-c1fdd6de773c",
+    "game_id": "844878d7-a434-40a4-b2a7-4fd5604aa931",
+    "player_id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 1027,
+    "elo_after": 1037,
+    "elo_change": 10,
+    "created_at": "2026-02-23 14:46:32.352862+00"
+  },
+  {
+    "id": "3a70534d-0279-4756-8838-fe7f1e1aaca3",
+    "game_id": "844878d7-a434-40a4-b2a7-4fd5604aa931",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      3,
+      10
+    ],
+    "normalized_position": "6.5",
+    "elo_before": 967,
+    "elo_after": 963,
+    "elo_change": -4,
+    "created_at": "2026-02-23 14:46:32.352862+00"
+  },
+  {
+    "id": "ebc62e32-b30d-48c4-a3de-19faef2baf4d",
+    "game_id": "844878d7-a434-40a4-b2a7-4fd5604aa931",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      4,
+      9
+    ],
+    "normalized_position": "6.5",
+    "elo_before": 955,
+    "elo_after": 953,
+    "elo_change": -2,
+    "created_at": "2026-02-23 14:46:32.352862+00"
+  },
+  {
+    "id": "78e18f09-7e7f-494d-bfa2-93713bc845d8",
+    "game_id": "844878d7-a434-40a4-b2a7-4fd5604aa931",
+    "player_id": "022f3b0d-23b4-44d2-b38b-858b02cd2186",
+    "raw_positions": [
+      6,
+      8
+    ],
+    "normalized_position": "7",
+    "elo_before": 983,
+    "elo_after": 944,
+    "elo_change": -39,
+    "created_at": "2026-02-23 14:46:32.352862+00"
+  },
+  {
+    "id": "92bbf1c6-9f30-41d7-beba-e28f066a07d3",
+    "game_id": "844878d7-a434-40a4-b2a7-4fd5604aa931",
+    "player_id": "7ab070a1-1cf6-4177-8f37-8f9cca331528",
+    "raw_positions": [
+      7
+    ],
+    "normalized_position": "7",
+    "elo_before": 932,
+    "elo_after": 901,
+    "elo_change": -31,
+    "created_at": "2026-02-23 14:46:32.352862+00"
+  },
+  {
+    "id": "a5dcffd7-0473-4ae1-a940-eab3e9e8d3ac",
+    "game_id": "1e76fc0b-e4a2-479b-b1de-d2fa1cc1b125",
+    "player_id": "bafc8b76-a0c0-4187-b5f9-f529b1dc9133",
+    "raw_positions": [
+      1
+    ],
+    "normalized_position": "1",
+    "elo_before": 963,
+    "elo_after": 1026,
+    "elo_change": 63,
+    "created_at": "2026-02-24 07:12:54.638615+00"
+  },
+  {
+    "id": "313247a8-c5f7-4fd1-a2b2-6b36cc4b5d92",
+    "game_id": "1e76fc0b-e4a2-479b-b1de-d2fa1cc1b125",
+    "player_id": "1b629010-26bc-4ebd-a9c4-547594d87dfb",
+    "raw_positions": [
+      2
+    ],
+    "normalized_position": "2",
+    "elo_before": 953,
+    "elo_after": 1001,
+    "elo_change": 48,
+    "created_at": "2026-02-24 07:12:54.638615+00"
+  },
+  {
+    "id": "6c17825f-0b35-494c-83b7-8df4ec7c69ba",
+    "game_id": "1e76fc0b-e4a2-479b-b1de-d2fa1cc1b125",
+    "player_id": "f0b2e762-b1c9-4966-b031-1f99047826c6",
+    "raw_positions": [
+      3
+    ],
+    "normalized_position": "3",
+    "elo_before": 959,
+    "elo_after": 990,
+    "elo_change": 31,
+    "created_at": "2026-02-24 07:12:54.638615+00"
+  },
+  {
+    "id": "85be3488-685c-4182-a8ed-d7a2113a76e6",
+    "game_id": "1e76fc0b-e4a2-479b-b1de-d2fa1cc1b125",
+    "player_id": "b4066e6d-194d-4042-a054-252fc0a5c5da",
+    "raw_positions": [
+      4
+    ],
+    "normalized_position": "4",
+    "elo_before": 1037,
+    "elo_after": 1038,
+    "elo_change": 1,
+    "created_at": "2026-02-24 07:12:54.638615+00"
+  },
+  {
+    "id": "5672d040-5d10-40ce-b5f6-010fa771e14b",
+    "game_id": "1e76fc0b-e4a2-479b-b1de-d2fa1cc1b125",
+    "player_id": "d6488335-1382-4771-b728-da48a0da1461",
+    "raw_positions": [
+      5
+    ],
+    "normalized_position": "5",
+    "elo_before": 1012,
+    "elo_after": 1002,
+    "elo_change": -10,
+    "created_at": "2026-02-24 07:12:54.638615+00"
+  },
+  {
+    "id": "e8a4c411-a223-4dee-ae57-f257e853aedd",
+    "game_id": "1e76fc0b-e4a2-479b-b1de-d2fa1cc1b125",
+    "player_id": "7ab070a1-1cf6-4177-8f37-8f9cca331528",
+    "raw_positions": [
+      6
+    ],
+    "normalized_position": "6",
+    "elo_before": 901,
+    "elo_after": 894,
+    "elo_change": -7,
+    "created_at": "2026-02-24 07:12:54.638615+00"
+  },
+  {
+    "id": "cbeffff3-9851-4b95-a9c4-cbc56b064a64",
+    "game_id": "1e76fc0b-e4a2-479b-b1de-d2fa1cc1b125",
+    "player_id": "b639362a-bd78-4ac5-baf2-924d5a7de776",
+    "raw_positions": [
+      7,
+      9
+    ],
+    "normalized_position": "8",
+    "elo_before": 1057,
+    "elo_after": 1007,
+    "elo_change": -50,
+    "created_at": "2026-02-24 07:12:54.638615+00"
+  },
+  {
+    "id": "fc700058-1514-4cc2-987c-2bff04fb7fce",
+    "game_id": "1e76fc0b-e4a2-479b-b1de-d2fa1cc1b125",
+    "player_id": "aebc36db-98d5-4ce2-97cc-0ecd1b5a400e",
+    "raw_positions": [
+      8,
+      10
+    ],
+    "normalized_position": "9",
+    "elo_before": 1117,
+    "elo_after": 1041,
+    "elo_change": -76,
+    "created_at": "2026-02-24 07:12:54.638615+00"
+  }
+]

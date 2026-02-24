@@ -106,6 +106,13 @@ async function seed() {
   // Ensure strict chronological order
   gamesData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
+  // Track games played per player locally (for accurate K-factor during replay)
+  const gamesPlayedCount: Record<string, number> = {}
+  for (const name of uniqueNames) {
+    const p = playerMap.get(name)
+    if (p) gamesPlayedCount[p.id] = 0
+  }
+
   for (const gameData of gamesData) {
     console.log(`\nProcessing Game: ${gameData.date}`)
     
@@ -124,14 +131,14 @@ async function seed() {
         .select('id, initial_elo')
         .in('id', playerIds)
     
-    // Prepare for Elo Calc
+    // Prepare for Elo Calc (using tracked games played count)
     const eloCalcInput = normalized.map(n => {
         const p = currentPlayers?.find(cp => cp.id === n.playerId)
         if (!p) throw new Error(`Player ${n.playerId} not found during recalculation`)
         return {
             id: n.playerId,
             elo: p.initial_elo,
-            gamesPlayed: 10, 
+            gamesPlayed: gamesPlayedCount[n.playerId] ?? 0,
             position: n.normalizedPosition
         }
     })
@@ -173,6 +180,11 @@ async function seed() {
     }
 
     await supabase.from('game_results').insert(resultsPayload)
+
+    // Increment local games played counter for each participant
+    for (const n of normalized) {
+      gamesPlayedCount[n.playerId] = (gamesPlayedCount[n.playerId] ?? 0) + 1
+    }
   }
 
   console.log('\n✅ Seed complete!')

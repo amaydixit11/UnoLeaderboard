@@ -1,13 +1,20 @@
-export const K_FACTORS = {
-  PROVISIONAL: 32, // < 20 games
-  INTERMEDIATE: 24, // 20-50 games
-  ESTABLISHED: 16, // > 50 games
-}
+/**
+ * Dynamic K-factor using exponential decay.
+ * 
+ * K(n) = K_MIN + (K_MAX - K_MIN) * e^(-n / DECAY_RATE)
+ * 
+ * - K_MAX (32): Starting K for brand-new players (volatile ratings)
+ * - K_MIN (16): Floor K for veterans (stable ratings)
+ * - DECAY_RATE (20): Controls how quickly K drops. At 20 games, K ≈ 22.
+ * 
+ * Curve:  0 games → 32 | 10 → 26 | 20 → 22 | 50 → 17 | 100 → 16
+ */
+export const K_MIN = 16
+export const K_MAX = 32
+export const K_DECAY_RATE = 20
 
 export function getKFactor(gamesPlayed: number): number {
-  if (gamesPlayed < 20) return K_FACTORS.PROVISIONAL
-  if (gamesPlayed < 50) return K_FACTORS.INTERMEDIATE
-  return K_FACTORS.ESTABLISHED
+  return K_MIN + (K_MAX - K_MIN) * Math.exp(-gamesPlayed / K_DECAY_RATE)
 }
 
 export function getExpectedScore(playerElo: number, opponentElo: number): number {

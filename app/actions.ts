@@ -31,6 +31,16 @@ export async function submitGame(formData: { playerId: string; position: number 
     throw new Error('Failed to fetch players')
   }
 
+  // 2b. Fetch actual games played count for each player (for K-factor calculation)
+  const gamesPlayedMap: Record<string, number> = {}
+  for (const pid of playerIds) {
+    const { count } = await supabase
+      .from('game_results')
+      .select('*', { count: 'exact', head: true })
+      .eq('player_id', pid)
+    gamesPlayedMap[pid] = count ?? 0
+  }
+
   // Map to format needed for Elo calc
   const eloInput = normalized.map(n => {
     const player = players.find(p => p.id === n.playerId)
@@ -38,7 +48,7 @@ export async function submitGame(formData: { playerId: string; position: number 
     return {
       id: player.id,
       elo: player.initial_elo,
-      gamesPlayed: 100, // TODO: Fetch actual games played count for K-factor
+      gamesPlayed: gamesPlayedMap[n.playerId] ?? 0,
       position: n.normalizedPosition
     }
   })
