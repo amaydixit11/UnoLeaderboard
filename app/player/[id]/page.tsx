@@ -1,6 +1,9 @@
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
-import { ArrowLeft, Trophy, Target, Hash, Zap } from 'lucide-react'
+import { ArrowLeft, Trophy, Target, Hash, Zap, BarChart2, PieChart } from 'lucide-react'
+import SkillDistributionChart from '@/components/SkillDistributionChart'
+import ChaosFactorChart from '@/components/ChaosFactorChart'
+import { pearsonCorrelation } from '@/lib/analytics'
 
 export const dynamic = 'force-dynamic'
 
@@ -43,7 +46,7 @@ export default async function PlayerProfile({ params }: { params: Promise<{ id: 
   }))
 
   // Relationships (Nemesis, Easy Target, Closest Rival)
-  const { data: allPlayers } = await supabase.from('players').select('id, name, os_ordinal')
+  const { data: allPlayers } = await supabase.from('players').select('id, name, os_ordinal, os_mu, os_sigma')
   const gameIds = results?.map((r: any) => r.game_id) || []
   const { data: opponentResults } = await supabase
     .from('game_results')
@@ -82,6 +85,16 @@ export default async function PlayerProfile({ params }: { params: Promise<{ id: 
       if (diff < closestRival.diff) closestRival = { name: p.name, diff, id: p.id }
     }
   })
+
+  // Chaos Factor Calculation
+  const chaosData = results?.map((r: any) => ({
+    lobbySize: r.games.total_players,
+    placement: (r.normalized_position - 1) / (r.games.total_players - 1 || 1) // 0 (1st) to 1 (last)
+  })) || []
+  
+  const lobbySizes = chaosData.map(d => d.lobbySize)
+  const placements = chaosData.map(d => d.placement)
+  const chaosCorrelation = pearsonCorrelation(lobbySizes, placements)
 
   return (
     <main className="min-h-screen p-4 md:p-8 max-w-4xl mx-auto space-y-8">
@@ -188,7 +201,59 @@ export default async function PlayerProfile({ params }: { params: Promise<{ id: 
       )}
 
 
-      <h2 className="text-xl font-bold font-mono uppercase mt-8 border-b border-foreground/20 pb-2 text-uno-yellow">Recent Performance</h2>
+      <h2 className="text-xl font-bold font-mono uppercase mt-8 border-b border-foreground/20 pb-2 text-foreground flex items-center gap-2">
+        <BarChart2 size={20} /> Deep Analytics
+      </h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Bayesian Skill Distribution */}
+        <div className="border border-foreground/20 p-6 bg-white/5 shadow-[4px_4px_0px_0px_var(--uno-green)]">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-sm font-bold font-mono uppercase text-uno-green tracking-widest">Skill Distribution</h3>
+            <span className="text-[10px] font-mono opacity-40 uppercase">OpenSkill Bayesian Model</span>
+          </div>
+          <SkillDistributionChart 
+            players={[
+              { 
+                name: player.name, 
+                mu: player.os_mu ?? 25, 
+                sigma: player.os_sigma ?? 8.333, 
+                color: '#22c55e' 
+              },
+              { 
+                name: 'Group Avg', 
+                mu: (allPlayers?.reduce((acc: number, p: any) => acc + (p.os_mu || 25), 0) || 0) / (allPlayers?.length || 1),
+                sigma: 8.333,
+                color: 'rgba(255,255,255,0.2)'
+              }
+            ]} 
+          />
+          <p className="mt-4 text-xs font-mono opacity-50 leading-relaxed">
+            This "Bell Curve" represents your mathematical skill range. A <span className="text-uno-green font-bold">tall, narrow peak</span> indicates high certainty in your rank, while a <span className="text-white font-bold opacity-100">wide hill</span> means you are still a "Wildcard".
+          </p>
+        </div>
+
+        {/* Chaos Factor Correlation */}
+        <div className="border border-foreground/20 p-6 bg-white/5 shadow-[4px_4px_0px_0px_var(--uno-red)]">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-sm font-bold font-mono uppercase text-uno-red tracking-widest">Chaos Factor</h3>
+            <span className="text-[10px] font-mono opacity-40 uppercase">Lobby size vs Performance</span>
+          </div>
+          <ChaosFactorChart 
+            data={chaosData} 
+            correlation={chaosCorrelation}
+          />
+          <p className="mt-4 text-xs font-mono opacity-50 leading-relaxed">
+            Measures if your performance correlates with group size. 
+            Negative correlation means you thrive in <span className="text-uno-red font-bold">large, chaotic lobbies</span>.
+            Positive means you are a <span className="text-uno-blue font-bold">Duelist</span>.
+          </p>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold font-mono uppercase mt-8 border-b border-foreground/20 pb-2 text-uno-yellow flex items-center gap-2">
+        <PieChart size={20} /> Recent Performance
+      </h2>
       
       <div className="space-y-4">
         {results?.map((res: any) => (
