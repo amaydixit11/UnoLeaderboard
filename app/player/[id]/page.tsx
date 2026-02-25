@@ -1,9 +1,11 @@
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
-import { ArrowLeft, Trophy, Target, Hash, Zap, BarChart2, PieChart } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { ArrowLeft, Trophy, Target, Hash, Zap, BarChart2, PieChart, Shield, Activity } from 'lucide-react'
 import SkillDistributionChart from '@/components/SkillDistributionChart'
 import ChaosFactorChart from '@/components/ChaosFactorChart'
-import { pearsonCorrelation } from '@/lib/analytics'
+import RadarChart from '@/components/RadarChart'
+import { pearsonCorrelation, calculateStandardDeviation, getPlayerClass } from '@/lib/analytics'
 
 export const dynamic = 'force-dynamic'
 
@@ -96,6 +98,18 @@ export default async function PlayerProfile({ params }: { params: Promise<{ id: 
   const placements = chaosData.map(d => d.placement)
   const chaosCorrelation = pearsonCorrelation(lobbySizes, placements)
 
+  // DNA Metrics Calculation (0-100)
+  const maxOs = Math.max(...(allPlayers?.map(p => p.os_ordinal) || [1000]))
+  const dna = {
+    firepower: winRate,
+    stability: Math.max(0, 100 - (calculateStandardDeviation(results?.map(r => r.normalized_position) || []) * 30)),
+    chaos: Math.max(0, 50 - (chaosCorrelation * 50)), // Lower correlation = higher chaos thrives
+    prestige: Math.min(100, ((player.os_ordinal || 0) / maxOs) * 100),
+    clutch: Math.round((results?.filter(r => r.games.total_players >= 5 && r.normalized_position <= 2).length || 0) / (results?.filter(r => r.games.total_players >= 5).length || 1) * 100)
+  }
+
+  const playerClass = getPlayerClass(dna)
+
   return (
     <main className="min-h-screen p-4 md:p-8 max-w-4xl mx-auto space-y-8">
       <header className="flex items-center gap-4">
@@ -148,10 +162,44 @@ export default async function PlayerProfile({ params }: { params: Promise<{ id: 
           </div>
         </div>
         <div className="border border-foreground/20 p-4 bg-white/5">
-          <div className="text-xs opacity-50 uppercase font-mono mb-1">K-Factor</div>
-          <div className="text-2xl font-bold font-mono flex items-center gap-2">
-            <Zap size={18} /> {kFactor}
+          <div className="text-xs opacity-50 uppercase font-mono mb-1 text-uno-blue">Class</div>
+          <div className={cn("text-2xl font-bold font-mono flex items-center gap-2", playerClass.color)}>
+            <Shield size={18} /> {playerClass.label}
           </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-black/20 p-6 border border-foreground/10">
+        <div className="space-y-4">
+          <div className="inline-block px-3 py-1 bg-uno-blue/10 border border-uno-blue/30 font-mono text-xs font-bold text-uno-blue uppercase tracking-widest">
+            Player DNA
+          </div>
+          <h2 className={cn("text-5xl font-black font-mono uppercase tracking-tighter", playerClass.color)}>
+            {playerClass.label}
+          </h2>
+          <p className="text-sm font-mono opacity-60 leading-relaxed max-w-md">
+            {playerClass.description}
+          </p>
+          <div className="grid grid-cols-2 gap-x-8 gap-y-2 pt-4">
+            {Object.entries(dna).map(([key, val]) => (
+              <div key={key} className="flex justify-between items-center border-b border-white/5 pb-1">
+                <span className="text-[10px] font-mono uppercase opacity-40">{key}</span>
+                <span className="text-sm font-bold font-mono">{val}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="relative">
+          <RadarChart 
+            data={[
+              { label: 'Firepower', value: dna.firepower },
+              { label: 'Stability', value: dna.stability },
+              { label: 'Chaos', value: dna.chaos },
+              { label: 'Prestige', value: dna.prestige },
+              { label: 'Clutch', value: dna.clutch },
+            ]} 
+            color={playerClass.color.includes('green') ? '#22c55e' : playerClass.color.includes('red') ? '#ef4444' : playerClass.color.includes('yellow') ? '#feca00' : '#2563eb'}
+          />
         </div>
       </div>
 

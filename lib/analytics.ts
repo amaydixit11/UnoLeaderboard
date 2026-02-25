@@ -63,3 +63,38 @@ export function linearRegression(x: number[], y: number[]): { m: number; b: numb
 
   return { m, b }
 }
+
+/**
+ * Calculate Standard Deviation of a set of numbers.
+ */
+export function calculateStandardDeviation(values: number[]): number {
+  if (values.length < 2) return 0
+  const avg = values.reduce((a, b) => a + b, 0) / values.length
+  const squareDiffs = values.map(v => Math.pow(v - avg, 2))
+  const avgSquareDiff = squareDiffs.reduce((a, b) => a + b, 0) / values.length
+  return Math.sqrt(avgSquareDiff)
+}
+
+/**
+ * Assign a "Player Class" based on DNA metrics.
+ * Metrics: { firepower, stability, chaos, prestige, clutch } - all 0-100.
+ */
+export function getPlayerClass(metrics: { 
+  firepower: number, 
+  stability: number, 
+  chaos: number, 
+  prestige: number, 
+  clutch: number 
+}): { label: string; color: string; description: string } {
+  const { firepower, stability, chaos, prestige, clutch } = metrics
+  
+  if (stability > 75 && firepower > 60) return { label: 'The Machine', color: 'text-uno-yellow', description: 'Metronomically consistent at the top level.' }
+  if (chaos > 70 && firepower > 50) return { label: 'Chaos Lord', color: 'text-uno-red', description: 'Thrives in the absolute mess of large lobbies.' }
+  if (clutch > 75) return { label: 'The Underdog', color: 'text-uno-blue', description: 'Consistently defies the mathematical odds.' }
+  if (firepower > 70) return { label: 'The Finisher', color: 'text-uno-green', description: 'A pure winner who closes games out.' }
+  if (prestige > 80) return { label: 'The Veteran', color: 'text-white', description: 'Holds a commanding position in the overall ratings.' }
+  if (stability > 70) return { label: 'Tactician', color: 'text-uno-blue', description: 'Calculated, steady, and rarely makes a wrong move.' }
+  if (chaos > 60) return { label: 'Gambler', color: 'text-uno-red', description: 'Plays high-risk, high-reward strategies in big games.' }
+  
+  return { label: 'Contender', color: 'text-foreground', description: 'A balanced player with no glaring weaknesses.' }
+}
